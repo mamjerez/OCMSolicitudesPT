@@ -10,11 +10,13 @@
  *:after {
   box-sizing: border-box;
  }
- html,
+html,
  body {
   height: 100%;
+  /* max-width: 860px; */
   position: relative;
   overflow: hidden;
+
  }
  .main-container {
   /* width: 90%; */
