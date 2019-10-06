@@ -1,40 +1,50 @@
 <div class="login-page">
     <div class="form">
-        <!-- <form class="register-form">
-            <input type="text" placeholder="name" />
-            <input type="password" placeholder="password" />
-            <input type="text" placeholder="email address" />
-            <button>create</button>
-            <p class="message">Already registered? <a href="#">Sign In</a></p>
-        </form> -->
-
-
-        <!-- <form class="login-form">
-            <img class ="logo" src="../../../assets/images/IconoOCM.png">
-            <input type="text" class="form-control" name="userName" #userNameInput="ngModel" [(ngModel)]="empleado.userName" maxlength="50" placeholder="Nombre de Usuario">
-            <input type="password" class="form-control" name="password" #lastNameInput="ngModel" [(ngModel)]="empleado.password" maxlength="12" placeholder="Password">
-            <button type="button" mat-raised-button class="mat-cancel" (click)="login()">
-              <fa-icon [icon]="'user'"></fa-icon>&nbsp;<span>Ingreso</span>
-            </button>
-            <p class="message">Not registered? <a href="#">Create an account</a></p>
-        </form> -->
-
-        <form class="login-form">
+         <form class="login-form">
             <img class ="logo" src="../../../assets/images/IconoOCM.png">
 
-             <!-- No funciona.
+            <!-- No funciona.
             https://fireship.io/snippets/improving-long-relative-paths-imports/
             https://escuela.it/cursos/curso-angular-8/clase/modulos-en-angular
             <img class ="logo" src="@images/IconoOCM.png"> -->
 
-            <input type="text" class="form-control" name="userName" maxlength="50" placeholder="Nombre de Usuario">
-            <input type="password" class="form-control" name="password" maxlength="12" placeholder="Password">
-            <button type="button" mat-raised-button class="mat-cancel" >
-              <span>Ingreso</span>
+            <!-- <input type="text" class="form-control" name="userName" maxlength="50" placeholder="Nombre de Usuario"> -->
+            <mat-form-field style = "width: 280px" hintLabel="Máximo 10 caracteres">
+                <input matInput #input maxlength="10" style = "margin-bottom: 1px; padding:5px" placeholder="Nombre de Usuario" required>
+                <mat-hint align="end" style = "color: red">{{input.value?.length || 0}}/10</mat-hint>
+              </mat-form-field>
+
+            <!-- <input type="password" class="form-control" name="password" maxlength="12" placeholder="Password"> -->
+            <mat-form-field style = "width: 280px" hintLabel="Requerido. Máximo 15 caracteres">
+                <input matInput #input1 maxlength="15" style = "margin-bottom: 1px; padding:5px" placeholder="Password" required>
+                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                <!-- <mat-icon matSuffix>thumb_up</mat-icon> -->
+                <mat-hint align="end" style = "color: red">{{input1.value?.length || 0}}/15</mat-hint>
+              </mat-form-field>
+
+            <button type="button" mat-raised-button class="mat-cancel" style = "height:30px; margin-top: 30px; margin-bottom: 20px; padding: 0px" [routerLink]="['/inicio']" >
+              <span>Entrar</span>
+              <!-- <a [routerLink]="['/inicio']">Entrar</a> -->
             </button>
-            <p class="message">¿No estas registrado? <a href="#">Crea una cuenta</a></p>
+            <h3>O También</h3>
+            <button type="button" mat-raised-button class="mat-cancel" style = "height:30px; margin-top: 10px; padding: 0px; background:#55ACEE" [routerLink]="['/inicio']" >
+               <mat-icon matSuffix>thumb_up</mat-icon>
+              <span style = "padding-left: 8px">Entra con Twitter</span>
+              <!-- <a [routerLink]="['/inicio']">Entrar</a> -->
+            </button>
+
+            <button type="button" mat-raised-button class="mat-cancel" style = "height:30px; margin-top: 5px; padding: 0px; background:#3B5998" [routerLink]="['/inicio']" >
+              <span>Entra con Facebook</span>
+              <!-- <a [routerLink]="['/inicio']">Entrar</a> -->
+            </button>
+
+            <button type="button" mat-raised-button class="mat-cancel" style = "height:30px; margin-top: 5px; padding: 0px; background: #C94131" [routerLink]="['/inicio']" >
+              <span>Entra con Google</span>
+              <!-- <a [routerLink]="['/inicio']">Entrar</a> -->
+            </button>
+
+            <p class="message">¿No estas registrado? <br><a href="#">Crea una cuenta</a></p>
         </form>
-
-
     </div>
 </div>
+

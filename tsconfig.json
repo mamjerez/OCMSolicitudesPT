@@ -24,7 +24,8 @@
     "strictInjectionParameters": true,
     "baseUrl": "src",
     "paths": {
-      "@images/*": [ "app/assets/images/*" ]
+      "@images/*": [ "app/assets/images/*" ],
+      "@material/*": ["src/app/material/*"]
   }
   }
 }
