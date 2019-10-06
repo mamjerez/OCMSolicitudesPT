@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
+  email: any;
   form: FormGroup;
 
   constructor(

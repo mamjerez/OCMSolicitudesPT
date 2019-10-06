@@ -21,11 +21,11 @@ html,
  .main-container {
   /* width: 90%; */
   margin-top: 10px ;
-   min-height: 100vh; /* will cover the 100% of viewport */
+   min-height: 20vh; /* will cover the 100% of viewport */
   overflow: hidden;  /* Esta propiedad especifica si se recorta el contenido o añadir barras de desplazamiento cuando el contenido de un elemento es demasiado grande para caber en un área especificada. */
   display: grid;
   gap: 1.6em;
-  position: relative;
+  /* position: relative; */
 
   padding-bottom: 60px; /* height of your footer */
  }

@@ -1,10 +1,10 @@
 
 # Convenciones para nombres:
-  Nombre tablas en plural o singular.
-  Nombre id. idUsuarios o id.
-
+  Nombre tablas en plural o singular. EN SINGULAR
+  Nombre id. idUsuarios o id. = idUsuario
+  
 # Tipos de datos en SQL
-No permite usar columnas con DataType Boolean ¿Cual es el adecuado? Por ejemplo: AprobadaOCM en Solicitudes.
+No permite usar columnas con DataType Boolean ¿Cual es el adecuado? Por ejemplo: AprobadaOCM en Solicitudes. = BOL
 
 # Short import
 https://fireship.io/snippets/improving-long-relative-paths-imports/

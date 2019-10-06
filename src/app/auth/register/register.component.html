@@ -1,12 +1,32 @@
 <!-- <mat-card> -->
 
   <h1>Registro.</h1>
-  <form>
+  <!-- <form>
       <div class="emailBox">
-        <label for="emailAddress">Your e-mail address</label><br>
-        <input id="emailAddress" type="email" size="64" maxLength="64" required
-               placeholder="username@beststartupever.com" pattern=".+@beststartupever.com"
+        <label for="email">Your e-mai address</label><br>
+        <input id="email" type="email" name="email" size="64" [(ngModel)]="email" #email="ngModel" maxLength="64" required
+               placeholder="username@beststartupever.com"
                title="Please provide only a Best Startup Ever corporate e-mail address">
+
+               <div *ngIf="email.invalid">
+                  <small class="form-text text-danger" *ngIf="email.errors.required"
+                          >
+                      Your email is required.
+                  </small>
+                  <small class="form-text text-danger" *ngIf="email.errors.invalid"
+                         >
+                      Your email is invalid.
+                  </small>
+                  <small class="form-text text-danger" *ngIf="email.errors.minlength"
+                         >
+                      Your email is required to be at least 5 characters.
+                  </small>
+                  <small class="form-text text-danger" *ngIf="email.errors.maxlength"
+                         >
+                      Your email cannot be longer than 100 characters.
+                  </small>
+              </div>
+
       </div>
 
       <div class="messageBox">
@@ -15,7 +35,8 @@
                   placeholder="My shoes are too tight, and I have forgotten how to dance."></textarea>
       </div>
        <input type="submit" value="Send Request">
-     </form>
+     </form> -->
+
 
 
 
