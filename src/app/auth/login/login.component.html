@@ -9,13 +9,14 @@
             <img class ="logo" src="@images/IconoOCM.png"> -->
 
             <!-- <input type="text" class="form-control" name="userName" maxlength="50" placeholder="Nombre de Usuario"> -->
-            <mat-form-field style = "width: 280px" hintLabel="Máximo 10 caracteres">
+            <mat-form-field style = "width: 280px" hintLabel="Obligatorio. Máximo 10 caracteres" appearance="outline">
                 <input matInput #input maxlength="10" style = "margin-bottom: 1px; padding:5px" placeholder="Nombre de Usuario" required>
                 <mat-hint align="end" style = "color: red">{{input.value?.length || 0}}/10</mat-hint>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
               </mat-form-field>
 
             <!-- <input type="password" class="form-control" name="password" maxlength="12" placeholder="Password"> -->
-            <mat-form-field style = "width: 280px" hintLabel="Requerido. Máximo 15 caracteres">
+            <mat-form-field style = "width: 280px" hintLabel="Obligatorio. Máximo 15 caracteres" appearance="outline">
                 <input matInput #input1 maxlength="15" style = "margin-bottom: 1px; padding:5px" placeholder="Password" required>
                 <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
                 <!-- <mat-icon matSuffix>thumb_up</mat-icon> -->
@@ -26,7 +27,7 @@
               <span>Entrar</span>
               <!-- <a [routerLink]="['/inicio']">Entrar</a> -->
             </button>
-            <h3>O También</h3>
+            <h5>O También</h5>
             <button type="button" mat-raised-button class="mat-cancel" style = "height:30px; margin-top: 10px; padding: 0px; background:#55ACEE" [routerLink]="['/inicio']" >
                <mat-icon matSuffix>thumb_up</mat-icon>
               <span style = "padding-left: 8px">Entra con Twitter</span>
@@ -43,7 +44,7 @@
               <!-- <a [routerLink]="['/inicio']">Entrar</a> -->
             </button>
 
-            <p class="message">¿No estas registrado? <br><a href="#">Crea una cuenta</a></p>
+            <p class="message">¿No estas registrado? <br><a href="#">Crea una cuenta.</a></p>
         </form>
     </div>
 </div>

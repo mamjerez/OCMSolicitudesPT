@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl, Validators} from '@angular/forms';
+
 // import { IEmpleado, Empleado } from '../../shared/models/empleado.model';
 // import { LoginService } from '../../shared/services/login.service';
 // import { Router } from '@angular/router';
@@ -11,6 +13,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+
+  email = new FormControl('', [Validators.required, Validators.email]);
+
+  getErrorMessage() {
+    return this.email.hasError('required') ? 'You must enter a value' :
+        this.email.hasError('email') ? 'Not a valid email' :
+            '';
+  }
 
   // empleado: IEmpleado;
   // constructor(
