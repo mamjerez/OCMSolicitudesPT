@@ -6,6 +6,8 @@ import {FormControl, Validators} from '@angular/forms';
 // import { Router } from '@angular/router';
 // import { LocalStorageService } from 'ngx-webstorage';
 // import { MatSnackBar } from '@angular/material';
+import { LoginService } from './login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +18,8 @@ export class LoginComponent implements OnInit {
 
 
   email = new FormControl('', [Validators.required, Validators.email]);
+  username: string;
+  password: string;
 
   getErrorMessage() {
     return this.email.hasError('required') ? 'You must enter a value' :
@@ -23,35 +27,22 @@ export class LoginComponent implements OnInit {
             '';
   }
 
-  // empleado: IEmpleado;
-  // constructor(
-  //   public loginService: LoginService,
-  //   private router: Router,
-  //   private localStorage: LocalStorageService,
-  //   private snackBar: MatSnackBar
-  //   ) { }
+  constructor(
+    public loginService: LoginService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
     // this.empleado = new Empleado();
   }
 
-  // login() {
-  //   this.loginService.login(this.empleado).subscribe(response => {
-  //     if (response.body) {
-  //       this.localStorage.store('authenticationToken', response.body.rol);
-  //       this.localStorage.store('idEmpleado', response.body.idEmpleado);
-  //       this.localStorage.store('empleado', response.body);
-  //       this.router.navigate(['/linea']);
-  //       this.loginService.changeLogin(true);
-  //     } else {
-  //       this.loginService.changeLogin(false);
-  //       this.openSnackBar('Usuario o Contraseña son incorrectos', 'Login');
-  //     }
-  //   }, error => {
-  //     console.log('error en servicio');
-  //     this.openSnackBar('Usuario o Contraseña son incorrectos', 'Login');
-  //   });
-  // }
+  login() {
+    // console.log(this.username);
+    // console.log(this.password);
+    this.loginService.login({user_name: this.username, password: this.password}).subscribe(response => {
+      console.log('login ok');
+    });
+  }
 
   // openSnackBar(message: string, action: string) {
   //   this.snackBar.open(message, action, {

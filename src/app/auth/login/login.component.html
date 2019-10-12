@@ -10,20 +10,20 @@
 
             <!-- <input type="text" class="form-control" name="userName" maxlength="50" placeholder="Nombre de Usuario"> -->
             <mat-form-field style = "width: 280px" hintLabel="Obligatorio. Máximo 10 caracteres" appearance="outline">
-                <input matInput #input maxlength="10" style = "margin-bottom: 1px; padding:5px" placeholder="Nombre de Usuario" required>
-                <mat-hint align="end" style = "color: red">{{input.value?.length || 0}}/10</mat-hint>
-                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                <input matInput maxlength="10" style = "margin-bottom: 1px; padding:5px" placeholder="Nombre de Usuario" required name="username" [(ngModel)]="username">
+                <!-- <mat-hint align="end" style = "color: red">{{input.value?.length || 0}}/10</mat-hint> -->
+                <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
               </mat-form-field>
 
             <!-- <input type="password" class="form-control" name="password" maxlength="12" placeholder="Password"> -->
             <mat-form-field style = "width: 280px" hintLabel="Obligatorio. Máximo 15 caracteres" appearance="outline">
-                <input matInput #input1 maxlength="15" style = "margin-bottom: 1px; padding:5px" placeholder="Password" required>
+                <input matInput type="password" maxlength="15" style = "margin-bottom: 1px; padding:5px" placeholder="Password" name="password" required [(ngModel)]="password">
                 <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
                 <!-- <mat-icon matSuffix>thumb_up</mat-icon> -->
-                <mat-hint align="end" style = "color: red">{{input1.value?.length || 0}}/15</mat-hint>
+                <!-- <mat-hint align="end" style = "color: red">{{input1.value?.length || 0}}/15</mat-hint> -->
               </mat-form-field>
 
-            <button type="button" mat-raised-button class="mat-cancel" style = "height:30px; margin-top: 30px; margin-bottom: 20px; padding: 0px" [routerLink]="['/inicio']" >
+            <button (click)="login()" type="button" mat-raised-button class="mat-cancel" style = "height:30px; margin-top: 30px; margin-bottom: 20px; padding: 0px" [routerLink]="['/inicio']" >
               <span>Entrar</span>
               <!-- <a [routerLink]="['/inicio']">Entrar</a> -->
             </button>
