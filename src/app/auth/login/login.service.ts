@@ -9,7 +9,7 @@ type EntityArrayResponseType = HttpResponse<any[]>;
   providedIn: 'root'
 })
 export class LoginService {
-  public resourceUrl ='http://localhost:4000/api/v1/users/signIn';
+  public resourceUrl = 'http://localhost:4000/api/v1/users/signIn';
   /**
    *
    * @param http
@@ -17,12 +17,29 @@ export class LoginService {
   constructor(protected http: HttpClient) { }
 
   /**
-   * Metodo para realizar el login al sistema de un usuario
+   * Metodo para realizar el login al sistema de un usuario.
    * username:
    * password:
-   * @param user
    */
-  login(user: any): Observable<EntityResponseType> {
-    return this.http.post<any>(this.resourceUrl, user, { observe: 'response' });
+  // signIn(username: string , password: string): Observable<EntityResponseType> {
+  //   console.log('Estoy en login.service ' + username + ' ' + password);
+  //   try {
+  //        return this.http.post<any>(this.resourceUrl, [username, password], { observe: 'response' });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
+
+  signIn(user: any) {
+    // console.log('Estoy en login.service ' + username + ' ' + password);
+    try {
+         return this.http.post (this.resourceUrl, user);
+    } catch (error) {
+      console.log(error);
+    }
   }
+
+
 }
+
+

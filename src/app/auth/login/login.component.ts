@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 
 // import { IEmpleado, Empleado } from '../../shared/models/empleado.model';
-// import { LoginService } from '../../shared/services/login.service';
 // import { Router } from '@angular/router';
 // import { LocalStorageService } from 'ngx-webstorage';
 // import { MatSnackBar } from '@angular/material';
@@ -36,11 +35,33 @@ export class LoginComponent implements OnInit {
     // this.empleado = new Empleado();
   }
 
-  login() {
+  signIn() {
     // console.log(this.username);
-    // console.log(this.password);
-    this.loginService.login({user_name: this.username, password: this.password}).subscribe(response => {
+    // console.log(this.password)
+    console.log('Pulsado botón SignIn');
+    console.log({
+      username : this.username,
+      password : this.password
+    });
+    this.loginService.signIn({
+      user_name : this.username,
+      password : this.password
+    }).subscribe(response => {
       console.log('login ok');
+      console.log(response);
+      if ( response === 'usuario incorrecto' || response === 'password incorrecto') {
+        //alerta toast o
+        if (response === 'usuario incorrecto') {
+          //toast o aler de usuario
+        }
+
+        if (response === 'password incorrecto') {
+          //toast o notificacion para alertar el pass
+        }
+      } else {
+        this.router.navigate(['/inicio']);
+      }
+
     });
   }
 

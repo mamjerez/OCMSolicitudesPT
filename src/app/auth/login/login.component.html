@@ -8,40 +8,62 @@
             https://escuela.it/cursos/curso-angular-8/clase/modulos-en-angular
             <img class ="logo" src="@images/IconoOCM.png"> -->
 
-            <!-- <input type="text" class="form-control" name="userName" maxlength="50" placeholder="Nombre de Usuario"> -->
-            <mat-form-field style = "width: 280px" hintLabel="Obligatorio. Máximo 10 caracteres" appearance="outline">
-                <input matInput maxlength="10" style = "margin-bottom: 1px; padding:5px" placeholder="Nombre de Usuario" required name="username" [(ngModel)]="username">
+              <mat-form-field style = "width: 280px" hintLabel="Obligatorio. Máximo 10 caracteres" appearance="outline">
+                <!-- La propiedad name="username" es la que nos permitira usar este campo como parte del req.body. -->
+                <!-- La propiedad  [(ngModel)]="username" esla que hace el binding entre el HTML y Typescript. -->
+                <input matInput name="username"
+                maxlength="10"
+                style = "margin-bottom: 1px; padding:5px"
+                placeholder="Nombre de Usuario"
+                required
+                 [(ngModel)]="username">
                 <!-- <mat-hint align="end" style = "color: red">{{input.value?.length || 0}}/10</mat-hint> -->
                 <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
               </mat-form-field>
 
-            <!-- <input type="password" class="form-control" name="password" maxlength="12" placeholder="Password"> -->
             <mat-form-field style = "width: 280px" hintLabel="Obligatorio. Máximo 15 caracteres" appearance="outline">
-                <input matInput type="password" maxlength="15" style = "margin-bottom: 1px; padding:5px" placeholder="Password" name="password" required [(ngModel)]="password">
+                <input matInput  name="password"
+                 type="password"
+                 maxlength="15"
+                 style = "margin-bottom: 1px; padding:5px"
+                 placeholder="Password"
+                 required
+                  [(ngModel)]="password">
                 <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
                 <!-- <mat-icon matSuffix>thumb_up</mat-icon> -->
                 <!-- <mat-hint align="end" style = "color: red">{{input1.value?.length || 0}}/15</mat-hint> -->
               </mat-form-field>
 
-            <button (click)="login()" type="button" mat-raised-button class="mat-cancel" style = "height:30px; margin-top: 30px; margin-bottom: 20px; padding: 0px" [routerLink]="['/inicio']" >
+            <button (click)="signIn()" type="button"
+              style = "height:30px; margin-top: 30px; margin-bottom: 20px; padding: 0px">
+              <!-- [routerLink]="['/inicio']"> -->
               <span>Entrar</span>
-              <!-- <a [routerLink]="['/inicio']">Entrar</a> -->
             </button>
+
             <h5>O también</h5>
-            <button type="button" mat-raised-button class="mat-cancel" style = "height:30px; margin-top: 10px; padding: 0px; background:#55ACEE" [routerLink]="['/inicio']" >
+            <button type="button" mat-raised-button
+            class="mat-cancel"
+            style = "height:30px; margin-top: 10px; padding: 0px; background:#55ACEE"
+            [routerLink]="['/inicio']" >
                <!-- <mat-icon matSuffix>thumb_up</mat-icon> -->
                <i class="fa fa-twitter"></i>
               <span style = "padding-left: 8px">Entra con Twitter</span>
               <!-- <a [routerLink]="['/inicio']">Entrar</a> -->
             </button>
 
-            <button type="button" mat-raised-button class="mat-cancel" style = "height:30px; margin-top: 5px; padding: 0px; background:#3B5998" [routerLink]="['/inicio']" >
+            <button type="button" mat-raised-button
+            class="mat-cancel"
+            style = "height:30px; margin-top: 5px; padding: 0px; background:#3B5998"
+             [routerLink]="['/inicio']" >
               <i class="fa fa-facebook"></i>
               <span style = "padding-left: 8px">Entra con Facebook</span>
               <!-- <a [routerLink]="['/inicio']">Entrar</a> -->
             </button>
 
-            <button type="button" mat-raised-button class="mat-cancel" style = "height:30px; margin-top: 5px; padding: 0px; background: #C94131" [routerLink]="['/inicio']" >
+            <button type="button" mat-raised-button
+            class="mat-cancel"
+             style = "height:30px; margin-top: 5px; padding: 0px; background: #C94131"
+             [routerLink]="['/inicio']" >
               <i class="fa fa-google"></i>
               <span style = "padding-left: 8px">Entra con Google</span>
               <!-- <a [routerLink]="['/inicio']">Entrar</a> -->

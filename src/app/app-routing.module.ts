@@ -8,10 +8,10 @@ import { RegisterComponent } from './auth/register/register.component';
 
 
 const appRoutes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: 'signIn', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'inicio', component: InicioComponent },
-  { path: '**', pathMatch: 'full', redirectTo: 'login' }
+  { path: '**', pathMatch: 'full', redirectTo: 'signIn' }
 ];
 
 @NgModule({
