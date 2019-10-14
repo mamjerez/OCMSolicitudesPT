@@ -10,10 +10,7 @@ type EntityArrayResponseType = HttpResponse<any[]>;
 })
 export class LoginService {
   public resourceUrl = 'http://localhost:4000/api/v1/users/signIn';
-  /**
-   *
-   * @param http
-   */
+
   constructor(protected http: HttpClient) { }
 
   /**
@@ -30,8 +27,12 @@ export class LoginService {
   //   }
   // }
 
+ /**
+  * Metodo para llamar al API y comprobar si existe el usuario y su password.
+  * @param user = objeto
+  */
+
   signIn(user: any) {
-    // console.log('Estoy en login.service ' + username + ' ' + password);
     try {
          return this.http.post (this.resourceUrl, user);
     } catch (error) {

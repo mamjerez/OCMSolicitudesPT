@@ -1,4 +1,13 @@
 
+
+
+
+
+
+
+
+#  -------------------- RESUELTAS ---------------------------------------------------------------------------------
+
 # Convenciones para nombres:
   Nombre tablas en plural o singular. EN SINGULAR
   Nombre id. idUsuarios o id. = idUsuario
