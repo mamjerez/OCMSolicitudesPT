@@ -1,5 +1,12 @@
 
+
+# ¿Crear carpetas para controllers, routes.....?
+¿Login.service.ts es un controller?
+
 # ¿Centralizar todos los mensajes un servicio?
+Por ejemplo los de usuario incorrecto, password incorrecto....
+
+
 
 
 
