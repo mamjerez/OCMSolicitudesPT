@@ -34,6 +34,10 @@ ul {
   padding-left: 0;
   margin-bottom: 0; }
 
+  label{
+margin-bottom: 0px !important ;
+  }
+
 a:hover {
   text-decoration: none; }
 
@@ -50,8 +54,8 @@ a:hover {
 .inner {
   min-width: 850px;
   margin: auto;
-  margin-top: 20px;
-  padding-top: 20px;
+  margin-top: 4px;
+  padding-top: 4px;
   padding-bottom: 48px;
   background: url("./images/mam.png"); }
 
