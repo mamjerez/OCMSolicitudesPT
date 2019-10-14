@@ -4,6 +4,8 @@ import { FormControl, Validators } from '@angular/forms';
 import { LoginService } from './login.service';
 import { Router } from '@angular/router';
 
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -35,10 +37,20 @@ export class LoginComponent implements OnInit {
     }).subscribe(response => {
       if (response === 'usuario incorrecto' || response === 'password incorrecto') {
         if (response === 'usuario incorrecto') {
-          // toast o alerta de usuario incorrecto.
+          Swal.fire({
+            title: '¡Error!',
+            text: 'Usuario incorrecto.',
+            type: 'error',
+            confirmButtonText: 'Aceptar'
+          });
         }
         if (response === 'password incorrecto') {
-          // toast o notificacion para alertar el passord es incorrecto.
+          Swal.fire({
+            title: '¡Error!',
+            text: 'Password incorrecto.',
+            type: 'error',
+            confirmButtonText: 'Aceptar'
+          });
         }
       } else {
         this.router.navigate(['/inicio']);
