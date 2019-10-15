@@ -1,7 +1,7 @@
 		<body>
     <!-- <div class="wrapper" style="background-image: url('./images/bg-registration-form-2.jpg');"> -->
       <div class="wrapper">
-			<div class="inner">
+			<div class="inner" *ngIf="user">
 				<form action="">
 					<h3>Formulario de registro.</h3>
 					<!-- <div class="form-group"> -->
@@ -11,8 +11,49 @@
               type="text"
               class="form-control"
               name = "nombre"
-              [(ngModel)]= "nombre">
+              [(ngModel)]= "user.nombre" required>
             </div>
+
+
+
+
+           <!-- <mat-form-field class="example-full-width" appearance="fill">
+                                <mat-label jhiTranslate="craftBeerStoreApp.caja.importe" for="field_importe">Importe</mat-label>
+                                <input type="number" matInput name="importe" id="field_importe"
+                                       [(ngModel)]="caja.importe" required/>
+                                <mat-error [hidden]="!(editForm.controls.importe?.dirty && editForm.controls.importe?.invalid)">
+                                    <small class="form-text text-danger"
+                                           [hidden]="!editForm.controls.importe?.errors?.required" jhiTranslate="entity.validation.required">
+                                        This field is required.
+                                    </small>
+                                    <small class="form-text text-danger"
+                                           [hidden]="!editForm.controls.importe?.errors?.number" jhiTranslate="entity.validation.number">
+                                        This field should be a number.
+                                    </small>
+                                </mat-error>
+                            </mat-form-field> -->
+                            <!-- <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+                             <div class="form-group">
+                              <label class="form-control-label" jhiTranslate="craftBeerStoreApp.caja.importe" for="field_importe">Importe</label>
+                              <input type="number" class="form-control" name="importe" id="field_importe"
+                                  [(ngModel)]="caja.importe" required/>
+                              <div [hidden]="!(editForm.controls.importe?.dirty && editForm.controls.importe?.invalid)">
+                                  <small class="form-text text-danger"
+                                  [hidden]="!editForm.controls.importe?.errors?.required" jhiTranslate="entity.validation.required">
+                                  This field is required.
+                                  </small>
+                                  <small class="form-text text-danger"
+                                      [hidden]="!editForm.controls.importe?.errors?.number" jhiTranslate="entity.validation.number">
+                                      This field should be a number.
+                                  </small>
+                              </div>
+                           </div>
+                          </form> -->
+
+
+
+
+
           <!-- </div> -->
           <!-- <div> -->
 						<div class="form-wrapper">
@@ -20,7 +61,7 @@
               <input type="text"
                class="form-control"
                name = "apellido1"
-               [(ngModel)]= "apellido1">
+               [(ngModel)]= "user.apellido1">
             </div>
           <!-- </div> -->
           <div class="form-wrapper">
@@ -28,28 +69,28 @@
             <input type="text"
              class="form-control"
              name = "apellido2"
-             [(ngModel)]= "apellido2">
+             [(ngModel)]= "user.apellido2">
           </div>
 					<div class="form-wrapper">
 						<label for="">Email</label>
             <input type="text"
             class="form-control"
             name = "email"
-            [(ngModel)]= "email">
+            [(ngModel)]= "user.email">
           </div>
           <div class="form-wrapper">
 						<label for="">Nombre de usuario</label>
             <input type="text"
              class="form-control"
              name = "user_name"
-             [(ngModel)]= "user_name">
+             [(ngModel)]= "user.user_name">
           </div>
 					<div class="form-wrapper">
 						<label for="">Password</label>
             <input type="password"
             class="form-control"
             name = "password"
-            [(ngModel)]= "password">
+            [(ngModel)]= "user.password">
 					</div>
 					<div class="form-wrapper">
 						<label for="">Confirma Password</label>

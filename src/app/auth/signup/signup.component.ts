@@ -12,22 +12,25 @@ import { SignupService } from './signup.service';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
+
 export class SignupComponent implements OnInit {
   user: User;
 
-  idUser: number ;
-  nombre: string;
-  apellido1: string;
-  apellido2: string;
-  email: string;
-  user_name: string;
-  password: string;
-  // avatar_url: string ;
-  // observaciones: string ;
-  // time_create: Date;
-  // time_update: Date ;
-  // idUser_create: number;
-  // idUser_update: number;
+// Usando  [(ngModel)]= "user.nombre" en lugar de  [(ngModel)]= "nombre"
+// evito tener que definir las variable aqui.
+  // idUser: number ;
+  // nombre: string;
+  // apellido1: string;
+  // apellido2: string;
+  // email: string;
+  // user_name: string;
+  // password: string;
+  // // avatar_url: string ;
+  // // observaciones: string ;
+  // // time_create: Date;
+  // // time_update: Date ;
+  // // idUser_create: number;
+  // // idUser_update: number;
 
   constructor(
     public signupService: SignupService,
@@ -35,45 +38,40 @@ export class SignupComponent implements OnInit {
    }
 
   ngOnInit() {
-  }
+    this.user = new User();
+    console.log(this.user);
+    }
 
   signUp() {
-    this.user = new User(
-    this.idUser,
-    this.nombre,
-    this.apellido1,
-    this.apellido2,
-    this.email,
-    this.user_name,
-    this.password,
-    // this.avatar_url,
-    // this.observaciones,
-    // this.time_create,
-    // this.time_update,
-    // this.idUser_create,
-    // this.idUser_update
-    );
-
-    this.signupService.signUp(this.user).subscribe(response => {
+    let errorText: string;
+    console.log(this.user);
+    this.signupService.signUp(this.user).subscribe((response => {
       if (response === 'user creado') {
         Swal.fire({
           position: 'top-end',
           type: 'success',
           title: '¡Te has registrado correctamente!',
-          showConfirmButton: true,
+          showConfirmButton: false,
           timer: 3000
-        })
-        console.log(this.user);
+        });
         this.router.navigate(['/inicio']);
-      }
-      if (response === 'Error al crear user') {
+      } else {
+        console.log(response);
+        switch (response) {
+          case 1062:
+            errorText = 'El usuario ya existe.';
+            break;
+          default:
+             errorText = 'Error al crear usuario.';
+             break;
+        }
         Swal.fire({
           title: '¡Error!',
-          text: 'Error al crear usuario.',
+          text: errorText,
           type: 'error',
           confirmButtonText: 'Aceptar'
         });
       }
-    });
+    }));
   }
 }

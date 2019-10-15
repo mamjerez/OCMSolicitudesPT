@@ -1,13 +1,4 @@
 
-# En user.model.ts
-¿Como se hace la asignacion a partir linea 33?
-
-# Problema con orden declaracion parametros opcionales y obligatorios.
-Un parametro obligatorio no puede seguir a uno opcional.
-
-# Formato de hora España en time_create y time_update.
-
-
 # Devolver al client, para poder mostrarlos. los posible errores al ejecutar un query en el server.
 
 
@@ -40,3 +31,16 @@ NO. Services son los que se usan internamente para llamar funciones, controller 
 # ¿Centralizar todos los mensajes un servicio?
 Por ejemplo los de usuario incorrecto, password incorrecto....
 SI, es conveniente.
+
+# En user.model.ts
+¿Como se hace la asignacion a partir linea 33?
+// this.idUser = idUser ? idUser : null; // if( idUser !== undefined) { return idUser} else {return null}
+// Si idUser es diferente de undefined coge el argumento que se pasa sino se define a NULL, es para evitar tener campos con undefined.
+
+
+# Problema con orden declaracion parametros opcionales y obligatorios.
+Un parametro obligatorio no puede seguir a uno opcional.
+Lo mejor es ponerlos todos como opcionales y controlar por codigo los obligatorios.
+
+# Formato de hora España en time_create y time_update.
+Usar momentjs
