@@ -13,6 +13,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './auth/signup/signup.component';
+import { Page404Component } from './components/page404/page404.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SignupComponent } from './auth/signup/signup.component';
     HeaderComponent,
     LoginComponent,
     InicioComponent,
-    SignupComponent
+    SignupComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,
