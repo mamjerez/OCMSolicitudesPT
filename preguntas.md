@@ -1,5 +1,4 @@
 
-# Devolver al client, para poder mostrarlos. los posible errores al ejecutar un query en el server.
 
 
 
@@ -44,3 +43,5 @@ Lo mejor es ponerlos todos como opcionales y controlar por codigo los obligatori
 
 # Formato de hora España en time_create y time_update.
 Usar momentjs
+
+# Devolver al client, para poder mostrarlos. los posible errores al ejecutar un query en el server.

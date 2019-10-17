@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { cleanSession } from 'selenium-webdriver/safari';
 
 @Component({
   selector: 'app-inicio',
@@ -13,3 +14,4 @@ export class InicioComponent implements OnInit {
   }
 
 }
+
