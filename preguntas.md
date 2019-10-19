@@ -1,5 +1,5 @@
 
-# signup1.component.html
+# signup.component.html
 ¿Como cambiar el button cuenado el form sea valida?
 
 Alinear etiqueta con input.

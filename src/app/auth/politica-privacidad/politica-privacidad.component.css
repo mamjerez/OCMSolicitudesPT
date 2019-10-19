@@ -1,0 +1,15 @@
+div{
+  width: 60%;
+  height: 70vh;
+  margin: auto;
+  text-align: justify;
+  overflow: scroll;
+
+}
+
+
+h6{
+  /* display: block; */
+  border: 10px,20px,10px,10px !important;
+  /* color:red; */
+}

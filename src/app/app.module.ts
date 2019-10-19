@@ -14,9 +14,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { SignupComponent } from './auth/signup/signup.component';
 import { Page404Component } from './components/page404/page404.component';
-import { Signup1Component } from './auth/signup1/signup1.component';
+import { SignupComponent } from './auth/signup/signup.component';
 import { PoliticaPrivacidadComponent } from './auth/politica-privacidad/politica-privacidad.component';
 
 @NgModule({
@@ -26,9 +25,8 @@ import { PoliticaPrivacidadComponent } from './auth/politica-privacidad/politica
     HeaderComponent,
     LoginComponent,
     InicioComponent,
-    SignupComponent,
     Page404Component,
-    Signup1Component,
+    SignupComponent,
     PoliticaPrivacidadComponent
   ],
   imports: [

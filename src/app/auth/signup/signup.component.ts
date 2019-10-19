@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 import { User } from './../../shared/models/user.model';
-import { SignupService } from './signup.service';
+import { SignupService } from '../signup/signup.service';
 // import { IUser } from 'src/app/shared/models/user.model';
 import { MyValidators } from '../../libs/validators';
 
@@ -46,38 +46,18 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
     this.user = new User();
-    console.log(this.user);
+    // console.log(this.user);
     }
 
-    register() {
-      if (this.form.valid) {
-        const nombre = this.form.value.nombre;
-        const apellido1 = this.form.value.apellido1;
-        const apellido2 = this.form.value.apellido2;
-        const email = this.form.value.email;
-        const nameUser = this.form.value.nameuser;
-        const password = this.form.value.password;
-        const confirmPassword = this.form.value.confirmpassword;
-        // this.authService.register(email, password)
-        // .then(data => {
-        //   this.router.navigate(['/auth/login']);
-        // })
-        // .catch(error => {
-        //   console.error(error);
-        //   this.openMessage(error.message);
-        // });
-      }
-    }
-
-    private buildForm() {
+       private buildForm() {
       this.form = this.formBuilder.group({
         nombre: ['', [ Validators.required, Validators.minLength(5)]],
         apellido1: ['', [ Validators.required, Validators.minLength(3)]],
         apellido2: ['', [ Validators.minLength(3)]],
         email: ['', [ Validators.required, Validators.email]],
         nombreUser: ['', [ Validators.required, Validators.minLength(3),  Validators.maxLength(12)]],
-        password: ['', [ Validators.required, Validators.minLength(8)]],
-        confirmPassword: ['', [ Validators.required, Validators.minLength(8)]],
+        password: ['', [ Validators.required, Validators.minLength(1)]],
+        confirmPassword: ['', [ Validators.required, Validators.minLength(1)]],
       }, {
         validators: [ MyValidators.isValidPassword ]
       });
