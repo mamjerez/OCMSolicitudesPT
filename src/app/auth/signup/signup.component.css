@@ -13,6 +13,16 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+ .container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 1.6em auto;
+    display: grid;
+    gap: 1.6em;
+    /* grid-template-columns: repeat(4, 1fr) 3%; */
+    grid-template-columns: repeat(5, 1fr);
+}
+
 body {
   font-family: "Muli-Regular";
   color: #666;
@@ -83,7 +93,8 @@ form {
   margin-bottom: 17px; }
   .form-wrapper label {
     margin-bottom: 9px;
-    display: block; }
+    display: block;
+  }
 
 .form-control {
   border: 1px solid #ccc;
@@ -95,7 +106,12 @@ form {
   font-family: "Muli-Bold";
   background: none; }
   .form-control:focus {
-    border: 1px solid #ae3c33; }
+    border: 2px solid #ae3c33; }
+
+  mat-error{
+      font-family: "Muli-Bold";
+      font-size: 10px;
+    }
 
 select {
   -moz-appearance: none;
@@ -116,13 +132,13 @@ button {
   align-items: center;
   justify-content: center;
   padding: 0;
-  background: #ae3c33;
+  /* background: #ae3c33; */
   font-size: 13px;
   color: #fff;
   text-transform: uppercase;
   font-family: "Muli-SemiBold";
   border-radius: 20px;
-  overflow: hidden;
+  /* overflow: hidden;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -130,8 +146,9 @@ button {
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s; }
-  button:before {
+  transition-duration: 0.5s; */
+ }
+  /* button:before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -150,11 +167,12 @@ button {
     transition-duration: 0.5s;
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out; }
+
   button:hover:before {
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
     -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
-    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66); }
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66); } */
 
 .checkbox {
   position: relative; }

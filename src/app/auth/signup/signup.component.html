@@ -1,111 +1,135 @@
-		<body>
-    <!-- <div class="wrapper" style="background-image: url('./images/bg-registration-form-2.jpg');"> -->
-      <div class="wrapper">
-			<div class="inner" *ngIf="user">
-				<form action="">
-					<h3>Formulario de registro.</h3>
-					<!-- <div class="form-group"> -->
-						<div class="form-wrapper">
-							<label for="">Nombre</label>
-              <input
-              type="text"
-              class="form-control"
-              name = "nombre"
-              [(ngModel)]= "user.nombre" required>
-            </div>
+<div class="container">
+   <div class="inner" >
+    <form novalidate [formGroup]="form">
+      <!-- <form action=""> -->
+      <h3>Formulario de registro.</h3>
 
+      <div class="form-wrapper">
+        <label >Nombre</label>
+        <input
+          nombre
+          placeholder="Nombre"
+          matInput
+          type="text"
+          formControlName="nombre"
+          class="form-control"
+        />
+        <mat-error *ngIf="nombreField.hasError('required')">
+          El campo es obligatorio
+        </mat-error>
+        <mat-error *ngIf="nombreField.hasError('minlength')">
+          Minimo debe tener 5 letras.
+        </mat-error>
+      </div>
 
+      <div class="form-wrapper">
+        <input
+          placeholder="Primer apellido"
+          matInput
+          type="text"
+          formControlName="apellido1"
+          class="form-control"
+        />
+        <mat-error *ngIf="apellido1Field.hasError('required')">
+          El campo es obligatorio.
+        </mat-error>
+        <mat-error *ngIf="nombreField.hasError('minlength')">
+          Minimo debe tener 3 letras.
+        </mat-error>
+      </div>
 
+      <div class="form-wrapper">
+        <input
+          placeholder="Segundo apellido"
+          matInput
+          type="text"
+          formControlName="apellido2"
+          class="form-control"
+        />
+        <mat-error *ngIf="apellido2Field.hasError('minlength')">
+          Minimo debe tener 3 letras.
+        </mat-error>
+      </div>
 
-           <!-- <mat-form-field class="example-full-width" appearance="fill">
-                                <mat-label jhiTranslate="craftBeerStoreApp.caja.importe" for="field_importe">Importe</mat-label>
-                                <input type="number" matInput name="importe" id="field_importe"
-                                       [(ngModel)]="caja.importe" required/>
-                                <mat-error [hidden]="!(editForm.controls.importe?.dirty && editForm.controls.importe?.invalid)">
-                                    <small class="form-text text-danger"
-                                           [hidden]="!editForm.controls.importe?.errors?.required" jhiTranslate="entity.validation.required">
-                                        This field is required.
-                                    </small>
-                                    <small class="form-text text-danger"
-                                           [hidden]="!editForm.controls.importe?.errors?.number" jhiTranslate="entity.validation.number">
-                                        This field should be a number.
-                                    </small>
-                                </mat-error>
-                            </mat-form-field> -->
-                            <!-- <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
-                             <div class="form-group">
-                              <label class="form-control-label" jhiTranslate="craftBeerStoreApp.caja.importe" for="field_importe">Importe</label>
-                              <input type="number" class="form-control" name="importe" id="field_importe"
-                                  [(ngModel)]="caja.importe" required/>
-                              <div [hidden]="!(editForm.controls.importe?.dirty && editForm.controls.importe?.invalid)">
-                                  <small class="form-text text-danger"
-                                  [hidden]="!editForm.controls.importe?.errors?.required" jhiTranslate="entity.validation.required">
-                                  This field is required.
-                                  </small>
-                                  <small class="form-text text-danger"
-                                      [hidden]="!editForm.controls.importe?.errors?.number" jhiTranslate="entity.validation.number">
-                                      This field should be a number.
-                                  </small>
-                              </div>
-                           </div>
-                          </form> -->
+      <div class="form-wrapper">
+        <input
+          placeholder="Correo electrónico"
+          matInput
+          type="email"
+          formControlName="email"
+          class="form-control"
+        />
+        <mat-error *ngIf="emailField.hasError('required')">
+          El campo es obligatorio
+        </mat-error>
+        <mat-error *ngIf="emailField.hasError('email')">
+          Debe ser un email valido.
+        </mat-error>
+      </div>
 
+      <div class="form-wrapper">
+        <input
+          placeholder="Nombre usuario"
+          matInput
+          type="text"
+          formControlName="nombreUser"
+          class="form-control"
+        />
+        <mat-error *ngIf="nombreUserField.hasError('required')">
+          El campo es obligatorio.
+        </mat-error>
+        <mat-error *ngIf="nombreUserField.hasError('minlength')">
+          Mínimo debe tener 3 caracteres.
+        </mat-error>
+        <mat-error *ngIf="nombreUserField.hasError('maxlength')">
+          Máximo debe tener 12 caracteres.
+        </mat-error>
+      </div>
 
+      <div class="form-wrapper">
+        <input
+          placeholder="Digite tu password"
+          matInput
+          type="password"
+          formControlName="password"
+          class="form-control"
+        />
+        <mat-error *ngIf="passwordField.hasError('required')">
+          El campo es obligatorio.
+        </mat-error>
+        <mat-error *ngIf="passwordField.hasError('minlength')">
+          Minimo debe tener 8 caracteres.
+        </mat-error>
+      </div>
+      <div class="form-wrapper">
+        <input
+          placeholder="Confirma tu password"
+          matInput
+          type="password"
+          formControlName="confirmPassword"
+          class="form-control"
+        />
+        <mat-error *ngIf="confirmPasswordField.hasError('required')">
+          El campo es obligatorio.
+        </mat-error>
+        <mat-error *ngIf="confirmPasswordField.hasError('minlength')">
+          Minimo debe tener 8 caracteres.
+        </mat-error>
+        <mat-error *ngIf="form.hasError('passwordNotValid')">
+          ¡El password no es igual!
+        </mat-error>
+      </div>
+      <div class="checkbox">
 
-
-
-          <!-- </div> -->
-          <!-- <div> -->
-						<div class="form-wrapper">
-							<label for="">Primer apellido</label>
-              <input type="text"
-               class="form-control"
-               name = "apellido1"
-               [(ngModel)]= "user.apellido1">
-            </div>
-          <!-- </div> -->
-          <div class="form-wrapper">
-            <label for="">Segundo apellido</label>
-            <input type="text"
-             class="form-control"
-             name = "apellido2"
-             [(ngModel)]= "user.apellido2">
-          </div>
-					<div class="form-wrapper">
-						<label for="">Email</label>
-            <input type="text"
-            class="form-control"
-            name = "email"
-            [(ngModel)]= "user.email">
-          </div>
-          <div class="form-wrapper">
-						<label for="">Nombre de usuario</label>
-            <input type="text"
-             class="form-control"
-             name = "user_name"
-             [(ngModel)]= "user.user_name">
-          </div>
-					<div class="form-wrapper">
-						<label for="">Password</label>
-            <input type="password"
-            class="form-control"
-            name = "password"
-            [(ngModel)]= "user.password">
-					</div>
-					<div class="form-wrapper">
-						<label for="">Confirma Password</label>
-            <input type="password"
-             class="form-control">
-					</div>
-					<div class="checkbox">
-						<label>
-							<input type="checkbox"> Acepto los terminos de Uso y Protección de Datos.
-							<span class="checkmark"></span>
-						</label>
-					</div>
-					<button (click)="signUp()">Registrarme</button>
-				</form>
-			</div>
-		</div>
-  </body>
-  <!-- This templates was made by Colorlib (https://colorlib.com) -->
+        <label>
+          <input type="checkbox" /> Acepto los terminos de Uso y Protección de
+          Datos.
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    </form>
+    <button (click)="signUp()" type="button" [disabled]="form.invalid">
+      Registrarme
+    </button>
+  </div>
+</div>

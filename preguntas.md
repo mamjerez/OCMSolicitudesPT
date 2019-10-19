@@ -1,4 +1,13 @@
 
+# signup1.component.html
+¿Como cambiar el button cuenado el form sea valida?
+
+Alinear etiqueta con input.
+
+Mantener alineación cuando desaparecen los mensajes de erreor.
+
+Funcinamiento checkbox.
+
 
 
 

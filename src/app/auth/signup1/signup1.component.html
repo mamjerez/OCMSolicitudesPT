@@ -1,0 +1,169 @@
+<header class="title">
+   <h1>Formulario de registro.</h1>
+  </header>
+
+<div class="container">
+  <div class="label form-wrapper">
+      <label >Nombre:</label>
+      <label >Primer apellido:</label>
+      <label id="labelSegundoApellido">Segundo apellido:</label>
+      <label >Correo electrónico:</label>
+      <label >Nombre de usuario:</label>
+      <label >Password:</label>
+      <label >Confirma password:</label>
+  </div>
+
+    <main class="content">
+        <article class="article">
+            <form novalidate [formGroup]="form">
+                <!-- <form action=""> -->
+
+                <div class="form-wrapper">
+
+                  <input
+                    placeholder="Nombre"
+                    matInput
+                    type="text"
+                    formControlName="nombre"
+                    class="form-control"
+                  />
+                  <mat-error *ngIf="nombreField.hasError('required')">
+                    Obligatorio.
+                  </mat-error>
+                  <mat-error *ngIf="nombreField.hasError('minlength')">
+                    Minimo debe tener 5 letras.
+                  </mat-error>
+                </div>
+
+                <div class="form-wrapper">
+                  <input
+                    placeholder="Primer apellido"
+                    matInput
+                    type="text"
+                    formControlName="apellido1"
+                    class="form-control"
+                  />
+                  <mat-error *ngIf="apellido1Field.hasError('required')">
+                      Obligatorio.
+                  </mat-error>
+                  <mat-error *ngIf="nombreField.hasError('minlength')">
+                    Minimo debe tener 3 letras.
+                  </mat-error>
+                </div>
+
+                <div class="form-wrapper">
+                  <input
+                    placeholder="Segundo apellido"
+                    matInput
+                    type="text"
+                    formControlName="apellido2"
+                    class="form-control"
+                  />
+                  <mat-error >
+                     Opcional.
+                    </mat-error>
+                  <mat-error *ngIf="apellido2Field.hasError('minlength')">
+                    Minimo debe tener 3 letras.
+                  </mat-error>
+                </div>
+
+                <div class="form-wrapper">
+                  <input
+                    placeholder="Correo electrónico"
+                    matInput
+                    type="email"
+                    formControlName="email"
+                    class="form-control"
+                  />
+                  <mat-error *ngIf="emailField.hasError('required')">
+                      Obligatorio.
+                  </mat-error>
+                  <mat-error *ngIf="emailField.hasError('email')">
+                    Debe ser un email valido.
+                  </mat-error>
+                </div>
+
+                <div class="form-wrapper">
+                  <input
+                    placeholder="Nombre usuario"
+                    matInput
+                    type="text"
+                    formControlName="nombreUser"
+                    class="form-control"
+                  />
+                  <mat-error *ngIf="nombreUserField.hasError('required')">
+                      Obligatorio.
+                  </mat-error>
+                  <mat-error *ngIf="nombreUserField.hasError('minlength')">
+                    Mínimo debe tener 3 caracteres.
+                  </mat-error>
+                  <mat-error *ngIf="nombreUserField.hasError('maxlength')">
+                    Máximo debe tener 12 caracteres.
+                  </mat-error>
+                </div>
+
+                <div class="form-wrapper">
+                  <input
+                    placeholder="Digite tu password"
+                    matInput
+                    type="password"
+                    formControlName="password"
+                    class="form-control"
+                  />
+                  <mat-error *ngIf="passwordField.hasError('required')">
+                      Obligatorio.
+                  </mat-error>
+                  <mat-error *ngIf="passwordField.hasError('minlength')">
+                    Minimo debe tener 8 caracteres.
+                  </mat-error>
+                </div>
+                <div class="form-wrapper">
+                  <input
+                    placeholder="Confirma tu password"
+                    matInput
+                    type="password"
+                    formControlName="confirmPassword"
+                    class="form-control"
+                  />
+                  <mat-error *ngIf="confirmPasswordField.hasError('required')">
+                      Obligatorio.
+                  </mat-error>
+                  <mat-error *ngIf="confirmPasswordField.hasError('minlength')">
+                    Minimo debe tener 8 caracteres.
+                  </mat-error>
+                  <mat-error *ngIf="form.hasError('passwordNotValid')">
+                    ¡El password no es igual!
+                  </mat-error>
+                </div>
+                <a [routerLink]="['/politica']">Leer politica</a>
+                <div class="checkbox">
+                  <!-- <label> -->
+                    <input type="checkbox" />
+                    <h6 id="textoLegal">Acepto los terminos de Uso y Protección de Datos.</h6>
+                    <span class="checkmark"></span>
+
+                  <!-- </label> -->
+                </div>
+              </form>
+              <!-- <button *ngIf != "form.invalid" (click)="signUp()"  type="button">
+                     Registrarme
+              </button> -->
+              <p  *ngIf = "form.invalid">form.invalid</p>
+              <button (click)="signUp()"  class="button disabled" type="button" [disabled]="form.invalid">
+                  Registrarme
+                </button>
+        </article>
+
+
+    </main>
+
+    <aside class="sidebar">
+        <div>
+            <img src="../../../assets/images/IconoOCM.png" alt="imagen" >
+            <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, officiis?</p> -->
+          </div>
+
+    </aside>
+
+
+</div>
