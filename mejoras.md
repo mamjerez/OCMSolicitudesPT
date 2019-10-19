@@ -60,3 +60,35 @@ complemento para VS Code:
 
 
 
+# AngularIntro Doce Monos.
+Nuevas extensiones:
+Auto Close tag
+Auto Rename tag
+
+Se pueden pasar varios css en los componentes.
+
+Componente es una funcionalidad.
+Modulo es un conjunto de componentes.
+Bootstrap es el componente que se iniciara
+Provider es para inyectar (principalmente services)
+Modelos formas de tipar lo que recibimos.
+
+
+Interpolacion {{   }}
+
+$event puede recibir un objeto $event.propiedad.
+
+Meter Bootstrap en package.json
+"styles":[
+  "node_modules/bootstrap/dist/css....."
+  ]
+
+crtl-a = seleccionar todo.
+crtl. = sugerencias.
+pulsando enter añade el this.
+
+
+
+
+
+
