@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './login.component';
-import { routesLogin } from './login.routing';
+import { SigninComponent } from './signin.component';
+import { routesLogin } from './signin.routing';
 // import { SharedModule } from '../../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -18,7 +18,7 @@ const ENTITY_STATES = [...routesLogin ];
     MaterialModule,
     RouterModule.forChild(ENTITY_STATES)
   ],
-  declarations: [LoginComponent],
+  declarations: [SigninComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class LoginModule { }

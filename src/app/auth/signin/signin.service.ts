@@ -8,7 +8,7 @@ type EntityArrayResponseType = HttpResponse<any[]>;
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class SigninService {
   public resourceUrl = 'http://localhost:4000/api/v1/users/signIn';
 
   constructor(protected http: HttpClient) { }

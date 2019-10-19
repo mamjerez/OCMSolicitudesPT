@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
-import { LoginComponent } from './auth/login/login.component';
+import { SigninComponent } from './auth/signin/signin.component';
 import { InicioComponent } from '../app/components/inicio/inicio.component';
 import { Page404Component } from './components/page404/page404.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { PoliticaPrivacidadComponent } from './auth/politica-privacidad/politica-privacidad.component';
 
 const appRoutes: Routes = [
-  { path: 'signIn', component: LoginComponent },
+  { path: 'signIn', component: SigninComponent },
   { path: 'politica', component: PoliticaPrivacidadComponent },
   { path: 'register', component: SignupComponent },
   { path: 'inicio', component: InicioComponent },

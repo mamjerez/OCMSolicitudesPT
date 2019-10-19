@@ -7,7 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
-import { LoginComponent } from './auth/login/login.component';
+import { SigninComponent } from './auth/signin/signin.component';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -23,7 +23,7 @@ import { PoliticaPrivacidadComponent } from './auth/politica-privacidad/politica
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    LoginComponent,
+    SigninComponent,
     InicioComponent,
     Page404Component,
     SignupComponent,

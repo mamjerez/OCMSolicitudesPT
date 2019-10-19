@@ -2,7 +2,7 @@
 // import { CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 // import { Observable } from 'rxjs';
 // import { LocalStorageService, SessionStorageService } from 'ngx-webstorage';
-// import { LoginService } from '../shared/services/login.service';
+// import { SigninService } from '../shared/services/signin.service';
 
 // @Injectable({
 //   providedIn: 'root'
@@ -12,7 +12,7 @@
 //     private router: Router,
 //     private localStorage: LocalStorageService,
 //     private sessionStorage: SessionStorageService,
-//     public loginService: LoginService
+//     public signinService: SigninService
 //     ) {}
 
 //   canActivate(
@@ -32,12 +32,12 @@
 //   private autenticated() {
 //     const token = this.localStorage.retrieve('authenticationToken') || this.sessionStorage.retrieve('authenticationToken');
 //     if (!token) {
-//       this.router.navigateByUrl('/login');
-//       this.loginService.changeLogin(false);
+//       this.router.navigateByUrl('/signin');
+//       this.signinService.changeSignin(false);
 //       return false;
 //     }
 
-//     this.loginService.changeLogin(true);
+//     this.signinService.changeSignin(true);
 //     return true;
 //   }
 // }

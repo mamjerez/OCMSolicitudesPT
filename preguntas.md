@@ -33,7 +33,7 @@ https://fireship.io/snippets/improving-long-relative-paths-imports/
 https://escuela.it/cursos/curso-angular-8/clase/modulos-en-angular
 
 # ¿Crear carpetas para controllers, routes.....?
-¿Login.service.ts es un controller?
+Signin.service.ts es un controller?
 NO. Services son los que se usan internamente para llamar funciones, controller son los que hacen llmadas hacia fuera, por ejemplo una API.
 
 # ¿Centralizar todos los mensajes un servicio?

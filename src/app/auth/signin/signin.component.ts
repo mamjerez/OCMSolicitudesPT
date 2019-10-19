@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 
-import { LoginService } from './login.service';
+import { SigninService } from './signin.service';
 import { Router } from '@angular/router';
 
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-signin',
+  templateUrl: './signin.component.html',
+  styleUrls: ['./signin.component.css']
 })
 
-export class LoginComponent implements OnInit {
+export class SigninComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   username: string;
   password: string;
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   }
 
   constructor(
-    public loginService: LoginService,
+    public loginService: SigninService,
     private router: Router
     ) { }
 

@@ -10,8 +10,8 @@ Auth:
   Minuto 40:22 Button .
   Minuto 51:00 IsValidPassword.
   Minuto 01:00:00 Controlar errores.
-  Minuto 01.06:00 Una vez registrado ir a logIn.
-  Minuto 01:10:30 Form login.
+  Minuto 01.06:00 Una vez registrado ir a signin.
+  Minuto 01:10:30 Form signin.
   Minuto 01:16:00 LogOut.
   Minuto 01:20:10 Guard.
   Minuto 01:48.00 Upload ficheros.

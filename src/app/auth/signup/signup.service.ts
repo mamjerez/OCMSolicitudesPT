@@ -14,12 +14,12 @@ export class SignupService {
   constructor(protected http: HttpClient) { }
 
   /**
-   * Metodo para realizar el login al sistema de un usuario.
+   * Metodo para realizar el signin al sistema de un usuario.
    * username:
    * password:
    */
   // signIn(username: string , password: string): Observable<EntityResponseType> {
-  //   console.log('Estoy en login.service ' + username + ' ' + password);
+  //   console.log('Estoy en signin.service ' + username + ' ' + password);
   //   try {
   //        return this.http.post<any>(this.resourceUrl, [username, password], { observe: 'response' });
   //   } catch (error) {
