@@ -1,4 +1,6 @@
 
+
+
 # Ideas desde el curso Angular 8 de EscuelaIT. https://escuela.it/cursos/curso-angular-8/clase/autenticacion-de-usuarios-y-seguridad-en-angular
 Auth:
   Minuto 08:10 Uso de Modulos y short import en tsconfig.json. Hay que reiniciar VS Code.
@@ -21,14 +23,14 @@ Auth:
 # https://escuela.it/cursos/curso-angular-8/clase/validacion-asincrona-y-programacion-reactiva
   Minuto 00:04:00 Validaciones asincronas a traves de una API. Async validator.
   Minuto 00:18:000 if abreviado. return res ? false :  true;
-  Minuto 00:35:25 Tablas con Amgular-Material.
+  Minuto 00:35:25 Tablas con Angular-Material.
   Minuto 01:07:00 Programación reactiva. Genera componentes dentro de un modulo.
   Minuto 01:11:00 Boton con contador MatBadge de Material. Carro de compra.
   Minuto 01:44:00 Unsuscribe observable.
   Minuto 01:49:15 Async pipe para unsuscribe automaticamente un observable.
 
 # Clase 10 https://escuela.it/cursos/curso-angular-8/clase/aplicaciones-web-progressivas-con-angular
-  Minuto 00:02:26 Evitar doble suscribe.
+  Minuto 00:02:26 Evitar doble subscribe.
 
 
 

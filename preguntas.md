@@ -1,12 +1,15 @@
 
 # signup.component.html
+
 ¿Como cambiar el button cuando el form sea valido?
 
-Alinear etiqueta con input.
-
-Mantener alineación cuando desaparecen los mensajes de error.
-
 Funcionamiento checkbox.
+
+Instalar token y guard
+https://codeburst.io/build-a-rest-api-for-node-mysql-2018-jwt-6957bcfc7ac9
+
+
+
 
 
 
