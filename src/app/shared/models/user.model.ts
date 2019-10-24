@@ -43,8 +43,9 @@ export class User implements IUser {
     this.password = password ? password : null;
     this.avatar_url = avatar_url ? avatar_url : null;
     this.observaciones = observaciones ? observaciones : null;
-    this.time_create = time_create ? time_create : null;
-    this.time_update = time_update ? time_update : null;
+    // No iniciarlos a null para que tome los valores por defecto en MySQL.
+    // this.time_create = time_create ? time_create : null;
+    // this.time_update = time_update ? time_update : null;
     this.idUser_create = idUser_create ? idUser_create : null;
     this.idUser_update = idUser_update ? idUser_update : null;
         }

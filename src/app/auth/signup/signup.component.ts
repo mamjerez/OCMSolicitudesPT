@@ -47,7 +47,8 @@ export class SignupComponent implements OnInit {
     });
   }
 
-    get nombreField() {
+  // #region  Nombres de campos para usar en HTML.
+  get nombreField() {
       return this.form.get('nombre');
     }
 
@@ -73,6 +74,7 @@ export class SignupComponent implements OnInit {
     get confirmPasswordField() {
       return this.form.get('confirmPassword');
     }
+    //#endregion
 
     // private openMessage(message: string) {
     //   this.matSnackBar.open(message, 'Cerrar');
@@ -88,6 +90,10 @@ export class SignupComponent implements OnInit {
       this.user.email = this.form.value.email;
       this.user.user_name = this.form.value.nombreUser;
       this.user.password = this.form.value.password;
+      // this.user.time_create = new Date();
+      // this.user.time_update = new Date();
+      this.user.idUser_create = 1;
+      this.user.idUser_update = 1;
      }
 
     // console.log(this.user);
