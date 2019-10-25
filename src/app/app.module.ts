@@ -13,10 +13,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Page404Component } from './components/page404/page404.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { PoliticaPrivacidadComponent } from './auth/politica-privacidad/politica-privacidad.component';
+import { AuthInterceptor } from './core/interceptors/auth.interceptor';
+import { Ng2Webstorage } from 'ngx-webstorage';
 
 @NgModule({
   declarations: [
@@ -37,9 +39,16 @@ import { PoliticaPrivacidadComponent } from './auth/politica-privacidad/politica
     BrowserAnimationsModule,
     HttpClientModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2Webstorage.forRoot({ prefix: 'app', separator: '-' }),
   ],
-  providers: [],
+  providers: [
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: AuthInterceptor,
+    //   multi: true
+    // }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

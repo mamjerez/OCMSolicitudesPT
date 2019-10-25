@@ -90,6 +90,7 @@ export class SignupComponent implements OnInit {
       this.user.email = this.form.value.email;
       this.user.user_name = this.form.value.nombreUser;
       this.user.password = this.form.value.password;
+      // No se inician para que tome los valores por defecto en MySQL
       // this.user.time_create = new Date();
       // this.user.time_update = new Date();
       this.user.idUser_create = 1;

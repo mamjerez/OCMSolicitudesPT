@@ -1,36 +1,34 @@
-import { ComponentFactoryResolver, ɵCompiler_compileModuleAndAllComponentsAsync__POST_R3__ } from '@angular/core'
-
 export interface IUser {
-  idUser?: number ;
-  nombre?: string;
-  apellido1?: string;
-  apellido2?: string;
-  email?: string;
-  user_name?: string;
-  password?: string;
-  avatar_url?: string ;
-  observaciones?: string ;
+  idUser?: number | null;
+  nombre?: string | null;
+  apellido1?: string | null;
+  apellido2?: string | null;
+  email?: string | null;
+  user_name?: string | null;
+  password?: string | null;
+  avatar_url?: string | null;
+  observaciones?: string | null;
   time_create?: Date;
   time_update?: Date ;
-  idUser_create?: number;
-  idUser_update?: number;
+  idUser_create?: number | null;
+  idUser_update?: number | null;
 }
 
 export class User implements IUser {
   constructor(
-    public idUser?: number,
-    public nombre?: string,
-    public apellido1?: string,
-    public apellido2?: string,
-    public email?: string,
-    public user_name?: string,
-    public password?: string,
-    public avatar_url?: string,
-    public observaciones?: string,
+    public idUser?: number | null,
+    public nombre?:string | null,
+    public apellido1?: string | null,
+    public apellido2?: string | null,
+    public email?: string | null,
+    public user_name?: string | null,
+    public password?: string | null,
+    public avatar_url?: string | null,
+    public observaciones?: string | null,
     public time_create?: Date,
     public time_update?: Date,
-    public idUser_create?: number,
-    public idUser_update?: number
+    public idUser_create?: number | null,
+    public idUser_update?: number | null
   ) {
   // this.idUser = idUser ? idUser : null equivale a  if( idUser !== undefined) { return idUser} else {return null}
   // Si idUser es diferente de undefined coge el argumento que se pasa sino se define a NULL, es para evitar tener campos con undefined.

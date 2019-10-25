@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-
 import { SigninService } from './signin.service';
 import { Router } from '@angular/router';
-
 import Swal from 'sweetalert2';
+import { LocalStorageService, SessionStorageService } from 'ngx-webstorage';
 
 @Component({
   selector: 'app-signin',
@@ -25,7 +24,9 @@ export class SigninComponent implements OnInit {
 
   constructor(
     public loginService: SigninService,
-    private router: Router
+    private router: Router,
+    private localStorage: LocalStorageService,
+    private sessionStorage: SessionStorageService
     ) { }
 
   ngOnInit() {}
@@ -35,6 +36,7 @@ export class SigninComponent implements OnInit {
       user_name: this.username,
       password: this.password
     }).subscribe(response => {
+      console.log(response);
       if (response === 'usuario incorrecto' || response === 'password incorrecto') {
         if (response === 'usuario incorrecto') {
           Swal.fire({
@@ -53,6 +55,7 @@ export class SigninComponent implements OnInit {
           });
         }
       } else {
+        this.localStorage.store('authenticationToken' ,response.token);
         this.router.navigate(['/inicio']);
       }
     });
