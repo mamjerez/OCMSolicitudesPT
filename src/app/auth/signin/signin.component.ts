@@ -55,7 +55,7 @@ export class SigninComponent implements OnInit {
           });
         }
       } else {
-        this.localStorage.store('authenticationToken' ,response.token);
+        this.localStorage.store('authenticationToken', response.token);
         this.router.navigate(['/inicio']);
       }
     });

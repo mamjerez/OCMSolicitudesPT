@@ -7,12 +7,15 @@ import { InicioComponent } from '../app/components/inicio/inicio.component';
 import { Page404Component } from './components/page404/page404.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { PoliticaPrivacidadComponent } from './auth/politica-privacidad/politica-privacidad.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const appRoutes: Routes = [
-  { path: 'signIn', component: SigninComponent },
-  { path: 'politica', component: PoliticaPrivacidadComponent },
+  { path: 'signIn',  component: SigninComponent },
+  { path: 'politica', canActivate: [AuthGuard], component: PoliticaPrivacidadComponent },
   { path: 'register', component: SignupComponent },
-  { path: 'inicio', component: InicioComponent },
+  { path: 'inicio', canActivate: [AuthGuard], component: InicioComponent },
+  { path: 'profile', canActivate: [AuthGuard], component: ProfileComponent },
   { path: '**', pathMatch: 'full', component: Page404Component }
 ];
 

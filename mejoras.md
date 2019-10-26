@@ -36,7 +36,69 @@ Auth:
 
 # Clase 11 https://escuela.it/cursos/curso-angular-8/clase/compilacion-de-alto-nivel-y-despliegue-final
 
+# Autentificación basada en Nodejs y Mysql, Aplicación Completa (Login, Registro, CRUD, ES6+ y Más ). •Diciembre 2018.
+Codigo: Fazt-nodejs-mysql-links.
+https://www.youtube.com/watch?v=qJ5R9WTW0_E
 
+Minuto 06:47 
+Instala express, express-handlebars, express-session, express-mysql-session, morgan,
+bcryptjs, body-parser, connect-flash, express-validator, passport, passport-local, timeago.js
+nodemon -D
+
+Minuto 42:54
+Crea tabla y FOREIGN KEY
+
+Minuto 47:05
+createPool en lugar de createConnection
+
+Minuto 1:10:26 https://youtu.be/qJ5R9WTW0_E?t=4226
+Recibe los datos del formulario.
+
+Minuto 1:12:40
+Usa destructuring en link.js
+
+`router.post('/add', async (req, res) => {
+    const { title, url, description } = req.body;
+    const newLink = {
+        title,
+        url,
+        description,
+        user_id: req.user.id
+    };
+    await pool.query('INSERT INTO links set ?', [newLink]);
+    req.flash('success', 'Link Saved Successfully');
+    res.redirect('/links');
+});`
+
+Minuto 1:25:00
+Usa timeago para pasar timestamp a fecha legible.
+
+Minuto 1:53:30 
+Mensages de confirmación acciones con connect.flash.
+https://github.com/jaredhanson/connect-flash
+Muy antigüo,hace 7 años que no se actualiza.
+
+
+ Minuto 2:11:30 https://youtu.be/qJ5R9WTW0_E?t=7890
+SignUp user
+
+ Minuto 2:19:30 https://youtu.be/qJ5R9WTW0_E?t=8370
+Uso de passport.
+
+https://www.npmjs.com/package/passport
+Ultima actualización hace 2 años.
+
+ Minuto 2:35:19 https://youtu.be/qJ5R9WTW0_E?t=9319
+Uso de bcryptjs
+
+https://www.npmjs.com/package/bcryptjs
+Ultima actualización hace 3 años.
+
+Minuto 2:50:56 SignIn User.  https://youtu.be/qJ5R9WTW0_E?t=10256
+
+Minuto 3:12:14 Protecting routes. https://youtu.be/qJ5R9WTW0_E?t=11534
+
+Minuto 03:17:16 Links en la barra de navegación. https://youtu.be/qJ5R9WTW0_E?t=11836 
   
    
 

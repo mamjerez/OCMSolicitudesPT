@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionStorageService, LocalStorageService } from 'ngx-webstorage';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  logeado = false;
+  constructor(
+    private localStorage: LocalStorageService, private sessionStorage: SessionStorageService
+  ) { }
 
   ngOnInit() {
+    if(this.localStorage.retrieve('authenticationToken')) {
+      this.logeado = true;
+    }
+
+  }
+
+  logout() {
+    this.localStorage.clear('authenticationToken');
+    this.sessionStorage.clear('authenticationToken');
+    this.logeado = false;
   }
 
 }

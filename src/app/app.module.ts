@@ -19,6 +19,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { PoliticaPrivacidadComponent } from './auth/politica-privacidad/politica-privacidad.component';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { Ng2Webstorage } from 'ngx-webstorage';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { Ng2Webstorage } from 'ngx-webstorage';
     InicioComponent,
     Page404Component,
     SignupComponent,
-    PoliticaPrivacidadComponent
+    PoliticaPrivacidadComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -43,11 +45,11 @@ import { Ng2Webstorage } from 'ngx-webstorage';
     Ng2Webstorage.forRoot({ prefix: 'app', separator: '-' }),
   ],
   providers: [
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: AuthInterceptor,
-    //   multi: true
-    // }
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

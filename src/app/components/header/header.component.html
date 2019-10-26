@@ -1,4 +1,5 @@
-<nav class="navbar navbar-dark bg-dark ml-4 mr-4">
+<nav class="navbar-right navbar-dark bg-dark ml-4 mr-4 pl-2 pt-2 pb-2">
+  <!-- <nav class="navbar navbar-dark bg-dark ml-4 mr-4"> -->
   <div>
       <!-- <img src="../../assets/images/IconoOCM-2.svg" alt="Logo OCM" height="42" width="42"> -->
       <svg
@@ -28,6 +29,55 @@
       />
     </svg>
     <p style="margin-left: 10px;color: white; font-size: 18px; font-weight: bold; display: inline">Consultas realizadas al Portal de Transparencia del Ayuntamiento de Jerez.</p>
+
+
+    <div style="display: inline-end; float: right; margin-left: 250px">
+      <ul style="display: inline">
+        <!-- {{#if user}} -->
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+          Links
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/links">All Links</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/links/add">Add A Link</a>
+          </div>
+        </li> -->
+        <li  style="display: inline; margin-right: 12px">
+          <a  href="#/inicio">Inicio</a>
+        </li>
+        <li  style="display: inline; margin-right: 12px" *ngIf="logeado">
+          <a  href="#/profile">Profile</a>
+        </li>
+        <!-- {{else}} -->
+        <li  style="display: inline; margin-right: 12px">
+          <a href="#/signIn">SignIn</a>
+        </li>
+        <li  style="display: inline; margin-right: 12px">
+          <a  href="#/register">SignUp</a>
+        </li>
+        <li  style="display: inline; margin-right: 12px">
+          <a  (click)="logout()">Logout</a>
+        </li>
+        <!-- {{/if}} -->
+      </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </div>
 </nav>
 

@@ -1,13 +1,12 @@
 
 # signup.component.html
 
-¿Como cambiar el button cuando el form sea valido?
-
 Funcionamiento checkbox.
 
 Instalar token y guard
 https://codeburst.io/build-a-rest-api-for-node-mysql-2018-jwt-6957bcfc7ac9
-
+https://medium.com/devc-kano/basics-of-authentication-using-passport-and-jwt-with-sequelize-and-mysql-database-748e09d01bab
+https://jonathanmh.com/express-passport-json-web-token-jwt-authentication-beginners/
 
 
 

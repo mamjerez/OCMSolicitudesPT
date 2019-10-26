@@ -12,37 +12,35 @@ type EntityArrayResponseType = HttpResponse<any[]>;
 export class SigninService {
   public resourceUrl = 'http://localhost:4000/api/v1/users/signIn';
 
-  constructor(protected http: HttpClient,
-    private localStorage: LocalStorageService,
-    private sessionStorage: SessionStorageService
-    ) { }
+  constructor(public http: HttpClient,
+              private localStorage: LocalStorageService,
+              private sessionStorage: SessionStorageService
+  ) { }
 
   /**
-   * Metodo para realizar el login al sistema de un usuario.
-   * username:
-   * password:
+   * Metodo para llamar al API y comprobar si existe el usuario y su password.
+   * @param user = objeto
    */
-  // signIn(username: string , password: string): Observable<EntityResponseType> {
-  //   console.log('Estoy en login.service ' + username + ' ' + password);
+  // agregar el header de autenticacion al http.get profiles
+  //
+  // signIn(user: any) {
+  //   const token = this.localStorage.retrieve('authenticationToken');
+  //   let headers: HttpHeaders = new HttpHeaders();
+  //   headers = headers.append('Authorization', 'auth-token ' + token);
   //   try {
-  //        return this.http.post<any>(this.resourceUrl, [username, password], { observe: 'response' });
+  //     return this.http.post(this.resourceUrl, user, { headers });
   //   } catch (error) {
   //     console.log(error);
   //   }
   // }
-
- /**
-  * Metodo para llamar al API y comprobar si existe el usuario y su password.
-  * @param user = objeto
-  */
-  //agregar el header de autenticacion al http.get profiles
-  //
+   // model
+  // { token: string}
   signIn(user: any) {
-    const token = this.localStorage.retrieve('authenticationToken');
-    let headers: HttpHeaders = new HttpHeaders();
-    headers = headers.append('Authorization', 'auth-token ' + token);
+    // const token = this.localStorage.retrieve('authenticationToken');
+    // let headers: HttpHeaders = new HttpHeaders();
+    // headers = headers.append('Authorization', 'auth-token ' + token);
     try {
-         return this.http.post (this.resourceUrl, user, {headers});
+      return this.http.post(this.resourceUrl, user);
     } catch (error) {
       console.log(error);
     }
