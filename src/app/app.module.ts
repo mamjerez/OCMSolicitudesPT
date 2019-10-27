@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AgGridModule } from 'ag-grid-angular';
 
 
 import { SigninComponent } from './auth/signin/signin.component';
@@ -23,6 +24,9 @@ import { Ng2Webstorage } from 'ngx-webstorage';
 import { ProfileComponent } from './components/profile/profile.component';
 import { UsersComponent } from './admin/users/users.component';
 import { UserUpdateComponent } from './admin/users/user-update/user-update.component';
+import { UserAgGridComponent } from './admin/users/user-ag-grid/user-ag-grid.component';
+import { UserBootstrapComponent } from './admin/users/user-bootstrap/user-bootstrap.component';
+import { UserMaterialComponent } from './admin/users/user-material/user-material.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,9 @@ import { UserUpdateComponent } from './admin/users/user-update/user-update.compo
     ProfileComponent,
     UsersComponent,
     UserUpdateComponent,
+    UserAgGridComponent,
+    UserBootstrapComponent,
+    UserMaterialComponent,
     // FontAwesomeModule,
   ],
   imports: [
@@ -49,6 +56,7 @@ import { UserUpdateComponent } from './admin/users/user-update/user-update.compo
     CommonModule,
     ReactiveFormsModule,
     Ng2Webstorage.forRoot({ prefix: 'app', separator: '-' }),
+    AgGridModule.withComponents([])
   ],
   providers: [
     {

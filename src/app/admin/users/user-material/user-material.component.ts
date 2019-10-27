@@ -1,20 +1,18 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { UsersService } from './users.service';
+import { UsersService } from '../users.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  selector: 'app-user-material',
+  templateUrl: './user-material.component.html',
+  styleUrls: ['./user-material.component.css']
 })
-export class UsersComponent implements OnInit {
-users;
-displayedColumns: string[] = ['Nombre', 'name', 'weight', 'symbol'];
-dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-
-
+export class UserMaterialComponent implements OnInit {
+  users;
+  displayedColumns: string[] = ['Nombre', 'name', 'weight', 'symbol'];
+  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   constructor(private usersService: UsersService) { }
 

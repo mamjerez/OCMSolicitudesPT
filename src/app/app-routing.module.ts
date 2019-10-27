@@ -11,6 +11,9 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AuthGuard } from './auth/auth.guard';
 
 import { UsersComponent } from './admin/users/users.component';
+import { UserAgGridComponent } from './admin/users/user-ag-grid/user-ag-grid.component';
+import { UserBootstrapComponent } from './admin/users/user-bootstrap/user-bootstrap.component';
+import { UserMaterialComponent } from './admin/users/user-material/user-material.component';
 
 
 
@@ -21,7 +24,10 @@ const appRoutes: Routes = [
   { path: 'inicio', canActivate: [AuthGuard], component: InicioComponent },
   { path: 'profile', canActivate: [AuthGuard], component: ProfileComponent },
 
-  { path: 'users',  component: UsersComponent },
+  // { path: 'users',  component: UsersComponent },
+  { path: 'users',  component: UserAgGridComponent },
+  { path: 'usersBootstrap',  component: UserBootstrapComponent },
+  { path: 'usersMaterial',  component: UserMaterialComponent },
 
   { path: '**', pathMatch: 'full', component: Page404Component }
 ];
