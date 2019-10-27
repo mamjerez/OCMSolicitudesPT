@@ -4,6 +4,7 @@ import { SigninService } from './signin.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { LocalStorageService, SessionStorageService } from 'ngx-webstorage';
+import { LogeadoService } from '../../services/logeado.service';
 
 @Component({
   selector: 'app-signin',
@@ -26,7 +27,8 @@ export class SigninComponent implements OnInit {
     public loginService: SigninService,
     private router: Router,
     private localStorage: LocalStorageService,
-    private sessionStorage: SessionStorageService
+    private sessionStorage: SessionStorageService,
+    private logeadoService: LogeadoService
     ) { }
 
   ngOnInit() {}
@@ -56,6 +58,7 @@ export class SigninComponent implements OnInit {
         }
       } else {
         this.localStorage.store('authenticationToken', response.token);
+        this.logeadoService.estaLogeado();
         this.router.navigate(['/inicio']);
       }
     });

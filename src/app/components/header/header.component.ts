@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SessionStorageService, LocalStorageService } from 'ngx-webstorage';
+import { LogeadoService } from '../../services/logeado.service';
 
 @Component({
   selector: 'app-header',
@@ -7,22 +9,22 @@ import { SessionStorageService, LocalStorageService } from 'ngx-webstorage';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  logeado = false;
+  logeado: string;
   constructor(
-    private localStorage: LocalStorageService, private sessionStorage: SessionStorageService
+    private localStorage: LocalStorageService,
+    private sessionStorage: SessionStorageService,
+    private router: Router,
+    private logeadoService: LogeadoService
   ) { }
 
   ngOnInit() {
-    if(this.localStorage.retrieve('authenticationToken')) {
-      this.logeado = true;
-    }
-
-  }
+     this.logeado = this.logeadoService.estaLogeado();
+     }
 
   logout() {
     this.localStorage.clear('authenticationToken');
     this.sessionStorage.clear('authenticationToken');
-    this.logeado = false;
+    this.logeado = this.logeadoService.estaLogeado();
+    this.router.navigate(['/signIn']);
   }
-
 }
