@@ -22,7 +22,6 @@ import { PoliticaPrivacidadComponent } from './auth/politica-privacidad/politica
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { Ng2Webstorage } from 'ngx-webstorage';
 import { ProfileComponent } from './components/profile/profile.component';
-import { UsersComponent } from './admin/users/users.component';
 import { UserUpdateComponent } from './admin/users/user-update/user-update.component';
 import { UserAgGridComponent } from './admin/users/user-ag-grid/user-ag-grid.component';
 import { UserBootstrapComponent } from './admin/users/user-bootstrap/user-bootstrap.component';
@@ -39,7 +38,6 @@ import { UserMaterialComponent } from './admin/users/user-material/user-material
     SignupComponent,
     PoliticaPrivacidadComponent,
     ProfileComponent,
-    UsersComponent,
     UserUpdateComponent,
     UserAgGridComponent,
     UserBootstrapComponent,
