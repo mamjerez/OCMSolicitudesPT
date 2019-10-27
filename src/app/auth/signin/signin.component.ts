@@ -38,7 +38,7 @@ export class SigninComponent implements OnInit {
       user_name: this.username,
       password: this.password
     }).subscribe(response => {
-      console.log(response);
+      console.log('La response: ' + response);
       if (response === 'usuario incorrecto' || response === 'password incorrecto') {
         if (response === 'usuario incorrecto') {
           Swal.fire({
@@ -57,7 +57,8 @@ export class SigninComponent implements OnInit {
           });
         }
       } else {
-        this.localStorage.store('authenticationToken', response.token);
+        // this.localStorage.store('authenticationToken', response.token );
+        this.localStorage.store('authenticationToken', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InciLCJpYXQiOjE1NzIxNzgwNTUsImV4cCI6MTU3MjI2NDQ1NX0.QruxCDoPwa-ZgZWvjW7ZkCC886NlKwXXRL6ngpQ3V9M' );
         this.logeadoService.estaLogeado();
         this.router.navigate(['/inicio']);
       }

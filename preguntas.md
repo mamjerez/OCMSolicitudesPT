@@ -1,17 +1,12 @@
 
-# signup.component.html
 
-Funcionamiento checkbox.
-
-Instalar token y guard
-https://codeburst.io/build-a-rest-api-for-node-mysql-2018-jwt-6957bcfc7ac9
-https://medium.com/devc-kano/basics-of-authentication-using-passport-and-jwt-with-sequelize-and-mysql-database-748e09d01bab
-https://jonathanmh.com/express-passport-json-web-token-jwt-authentication-beginners/
-
-
-
-
-
+# signin.componet.ts
+Error token
+ LInea 60: this.localStorage.store('authenticationToken', response.token);
+           interface Object {
+Linea 121      token: any;
+en lib.es5.d.ts
+C:\Users\pc\AppData\Local\Programs\Microsoft VS Code\resources\app\extensions\node_modules\typescript\lib\lib.es5.d.ts
 
 
 
@@ -56,3 +51,12 @@ Lo mejor es ponerlos todos como opcionales y controlar por codigo los obligatori
 Usar momentjs
 
 # Devolver al client, para poder mostrarlos. los posible errores al ejecutar un query en el server.
+
+# signup.component.html
+
+Funcionamiento checkbox.
+
+Instalar token y guard
+https://codeburst.io/build-a-rest-api-for-node-mysql-2018-jwt-6957bcfc7ac9
+https://medium.com/devc-kano/basics-of-authentication-using-passport-and-jwt-with-sequelize-and-mysql-database-748e09d01bab
+https://jonathanmh.com/express-passport-json-web-token-jwt-authentication-beginners/

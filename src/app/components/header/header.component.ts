@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
     private localStorage: LocalStorageService,
     private sessionStorage: SessionStorageService,
     private router: Router,
-    private logeadoService: LogeadoService
+    public logeadoService: LogeadoService
   ) { }
 
   ngOnInit() {

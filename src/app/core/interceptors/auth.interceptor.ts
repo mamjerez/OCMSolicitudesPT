@@ -15,14 +15,14 @@ export class AuthInterceptor implements HttpInterceptor {
         }
 
         const token = this.localStorage.retrieve('authenticationToken') || this.sessionStorage.retrieve('authenticationToken');
-        console.log(token);
+        // console.log(token);
         if (!!token) {
             request = request.clone({
                 setHeaders: {
                     Authorization: 'Bearer ' + token
                 }
             });
-            console.log(request);
+            // console.log(request);
         }
         return next.handle(request);
     }

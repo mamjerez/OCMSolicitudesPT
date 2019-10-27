@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 import { SigninComponent } from './auth/signin/signin.component';
@@ -20,6 +21,8 @@ import { PoliticaPrivacidadComponent } from './auth/politica-privacidad/politica
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { Ng2Webstorage } from 'ngx-webstorage';
 import { ProfileComponent } from './components/profile/profile.component';
+import { UsersComponent } from './admin/users/users.component';
+import { UserUpdateComponent } from './admin/users/user-update/user-update.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { ProfileComponent } from './components/profile/profile.component';
     Page404Component,
     SignupComponent,
     PoliticaPrivacidadComponent,
-    ProfileComponent
+    ProfileComponent,
+    UsersComponent,
+    UserUpdateComponent,
+    // FontAwesomeModule,
   ],
   imports: [
     BrowserModule,
