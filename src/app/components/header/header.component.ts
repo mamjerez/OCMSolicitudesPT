@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-     this.logeado = this.logeadoService.estaLogeado();
+    this.logeado = this.logeadoService.estaLogeado();
      }
 
   logout() {

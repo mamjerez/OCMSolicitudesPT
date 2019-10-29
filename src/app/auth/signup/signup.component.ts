@@ -39,7 +39,7 @@ export class SignupComponent implements OnInit {
       apellido1: ['', [Validators.required, Validators.minLength(3)]],
       apellido2: ['', [Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
-      nombreUser: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(12)]],
+      userName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(12)]],
       password: ['', [Validators.required, Validators.minLength(1)]],
       confirmPassword: ['', [Validators.required, Validators.minLength(1)]],
     }, {
@@ -63,8 +63,8 @@ export class SignupComponent implements OnInit {
       return this.form.get('email');
     }
 
-    get nombreUserField() {
-      return this.form.get('nombreUser');
+    get userNameField() {
+      return this.form.get('userName');
     }
 
     get passwordField() {
@@ -88,13 +88,13 @@ export class SignupComponent implements OnInit {
       this.user.apellido1 = this.form.value.apellido1;
       this.user.apellido2 = this.form.value.apellido2;
       this.user.email = this.form.value.email;
-      this.user.user_name = this.form.value.nombreUser;
+      this.user.userName = this.form.value.userName;
       this.user.password = this.form.value.password;
       // No se inician para que tome los valores por defecto en MySQL
       // this.user.time_create = new Date();
       // this.user.time_update = new Date();
-      this.user.idUser_create = 1;
-      this.user.idUser_update = 1;
+      this.user.idUserCreate = 1;
+      this.user.idUserUpdate = 1;
      }
 
     // console.log(this.user);

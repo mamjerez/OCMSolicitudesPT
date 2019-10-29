@@ -8,15 +8,16 @@
             https://escuela.it/cursos/curso-angular-8/clase/modulos-en-angular
             <img class ="logo" src="@images/IconoOCM.png"> -->
 
+
               <mat-form-field style = "width: 280px" hintLabel="Obligatorio. Máximo 10 caracteres" appearance="outline">
                 <!-- La propiedad name="username" es la que nos permitira usar este campo como parte del req.body. -->
                 <!-- La propiedad  [(ngModel)]="username" es la que hace el binding entre el HTML y Typescript. -->
-                <input matInput name="username"
+                <input matInput name="userName"
                 maxlength="10"
                 style = "margin-bottom: 1px; padding:5px"
                 placeholder="Nombre de Usuario"
                 required
-                 [(ngModel)]="username">
+                 [(ngModel)]="userName">
                 <!-- <mat-hint align="end" style = "color: red">{{input.value?.length || 0}}/10</mat-hint> -->
                 <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
               </mat-form-field>

@@ -1,16 +1,12 @@
-
-<!-- <ag-grid-angular
-style="width: 500px; height: 500px;"
-class="ag-theme-balham"
-[rowData]="rowData"
-[columnDefs]="columnDefs"
->
-</ag-grid-angular> -->
+<button (click)="getSelectedRows()">Get Selected Rows</button>
 
 <ag-grid-angular
+#agGrid
 style="width: 900px; height: 650px; margin: auto"
 class="ag-theme-balham"
-[rowData]="rowData1"
-[columnDefs]="columnDefs1"
+[rowData]="users"
+[columnDefs]="columnDefs"
+rowSelection="multiple"
+[autoGroupColumnDef]="autoGroupColumnDef"
 >
 </ag-grid-angular>

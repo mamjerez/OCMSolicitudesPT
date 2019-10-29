@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { UsersService } from '../users.service';
+import { AgGridAngular } from 'ag-grid-angular';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -8,42 +10,48 @@ import { UsersService } from '../users.service';
   styleUrls: ['./user-ag-grid.component.css']
 })
 export class UserAgGridComponent implements OnInit {
-users;
-rowData1;
+  @ViewChild('agGrid', {static: false}) agGrid: AgGridAngular;
+  users: any;
 
-  constructor(private usersService: UsersService) { }
+  constructor(
+    private usersService: UsersService,
+    private http: HttpClient) { }
 
-//   columnDefs = [
-//     {headerName: 'Make', field: 'make' },
-//     {headerName: 'Model', field: 'model' },
-//     {headerName: 'Price', field: 'price'}
-// ];
+  columnDefs = [
+    {headerName: 'Nombre', field: 'nombre', sortable: true, filter: true, checkboxSelection: true, editable: true },
+    {headerName: 'Apellido', field: 'apellido1', sortable: true, filter: true},
+    {headerName: 'email', field: 'email', sortable: true, filter: true}
+  ];
 
-// rowData = [
-//     { make: 'Toyota', model: 'Celica', price: 35000 },
-//     { make: 'Ford', model: 'Mondeo', price: 32000 },
-//     { make: 'Porsche', model: 'Boxter', price: 72000 }
-// ];
-
-columnDefs1 = [
-  {headerName: 'Nombre', field: 'nombre' },
-  {headerName: 'Apellido', field: 'apellido1' },
-  {headerName: 'email', field: 'email'}
-];
-
+  autoGroupColumnDef = {
+    headerName: 'Nombre',
+    field: 'nombre',
+    cellRenderer: 'agGroupCellRenderer',
+    cellRendererParams: {
+        checkbox: true
+    }
+};
 
 
   ngOnInit() {
     this.allUsers();
-    console.log(this.users);
   }
 
   allUsers() {
-    this.usersService.allUsers().subscribe( response => {
-     this.users = response;
-     console.log(this.users);
-     this.rowData1 = this.users;
+    this.usersService.allUsers().subscribe(response => {
+      this.users = response;
+      console.log(this.users);
     });
-   }
+  }
+
+  getSelectedRows() {
+    const selectedNodes = this.agGrid.api.getSelectedNodes();
+    const selectedData = selectedNodes.map( node => node.data );
+    const selectedDataStringPresentation = selectedData.map( node => node.nombre + ' ' + node.apellido1).join(', ');
+    alert(`Selected nodes: ${selectedDataStringPresentation}`);
+}
 
 }
+
+
+// https://www.ag-grid.com/javascript-grid-filter-quick/

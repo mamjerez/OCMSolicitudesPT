@@ -111,16 +111,16 @@
                 placeholder="Nombre usuario"
                 matInput
                 type="text"
-                formControlName="nombreUser"
+                formControlName="userName"
                 class="form-control"
               />
-              <mat-error *ngIf="nombreUserField.hasError('required')">
+              <mat-error *ngIf="userNameField.hasError('required')">
                 Obligatorio.
               </mat-error>
-              <mat-error *ngIf="nombreUserField.hasError('minlength')">
+              <mat-error *ngIf="userNameField.hasError('minlength')">
                 Mínimo debe tener 3 caracteres.
               </mat-error>
-              <mat-error *ngIf="nombreUserField.hasError('maxlength')">
+              <mat-error *ngIf="userNameField.hasError('maxlength')">
                 Máximo debe tener 12 caracteres.
               </mat-error>
             </div>

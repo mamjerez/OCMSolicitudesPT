@@ -14,7 +14,7 @@ import { LogeadoService } from '../../services/logeado.service';
 
 export class SigninComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
-  username: string;
+  userName: string;
   password: string;
 
   getErrorMessage() {
@@ -35,7 +35,7 @@ export class SigninComponent implements OnInit {
 
   signIn() {
     this.loginService.signIn({
-      user_name: this.username,
+      userName: this.userName,
       password: this.password
     }).subscribe(response => {
       console.log('La response: ' + response);
@@ -57,8 +57,8 @@ export class SigninComponent implements OnInit {
           });
         }
       } else {
-        // this.localStorage.store('authenticationToken', response.token );
-        this.localStorage.store('authenticationToken', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InciLCJpYXQiOjE1NzIxNzgwNTUsImV4cCI6MTU3MjI2NDQ1NX0.QruxCDoPwa-ZgZWvjW7ZkCC886NlKwXXRL6ngpQ3V9M' );
+        this.localStorage.store('authenticationToken', response.token );
+        // this.localStorage.store('authenticationToken', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InciLCJpYXQiOjE1NzIxNzgwNTUsImV4cCI6MTU3MjI2NDQ1NX0.QruxCDoPwa-ZgZWvjW7ZkCC886NlKwXXRL6ngpQ3V9M' );
         this.logeadoService.estaLogeado();
         this.router.navigate(['/inicio']);
       }

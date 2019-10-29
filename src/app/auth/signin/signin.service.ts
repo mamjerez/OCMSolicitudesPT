@@ -13,6 +13,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SigninService {
   public resourceUrl = 'http://localhost:4000/api/v1/users/signIn';
+  token: string;
 
   // constructor(public http: HttpClient,
   //             private localStorage: LocalStorageService,
@@ -29,7 +30,18 @@ export class SigninService {
   signIn(user: any) {
     // Los errores se manejan signin.component.ts
     try {
+      console.log(this.http.post(this.resourceUrl, user));
+
+      this.http.post(this.resourceUrl, user).subscribe (response => {
+        console.log(response);
+        // this.token = response.token;
+        // return this.token;
+        // return response.token;
+             });
+
       return this.http.post(this.resourceUrl, user);
+
+
     } catch (error) {
       console.log(error);
     }

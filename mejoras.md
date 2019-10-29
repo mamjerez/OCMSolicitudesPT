@@ -32,8 +32,6 @@ Auth:
 # Clase 10 https://escuela.it/cursos/curso-angular-8/clase/aplicaciones-web-progressivas-con-angular
   Minuto 00:02:26 Evitar doble subscribe.
 
-
-
 # Clase 11 https://escuela.it/cursos/curso-angular-8/clase/compilacion-de-alto-nivel-y-despliegue-final
 
 # Autentificación basada en Nodejs y Mysql, Aplicación Completa (Login, Registro, CRUD, ES6+ y Más ). •Diciembre 2018.
