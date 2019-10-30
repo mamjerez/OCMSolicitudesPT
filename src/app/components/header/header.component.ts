@@ -9,7 +9,7 @@ import { LogeadoService } from '../../services/logeado.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  logeado: string;
+
   constructor(
     private localStorage: LocalStorageService,
     private sessionStorage: SessionStorageService,
@@ -18,13 +18,12 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.logeado = this.logeadoService.estaLogeado();
-     }
+  }
 
   logout() {
     this.localStorage.clear('authenticationToken');
     this.sessionStorage.clear('authenticationToken');
-    this.logeado = this.logeadoService.estaLogeado();
     this.router.navigate(['/signIn']);
+    this.logeadoService.estaLogeado();
   }
 }

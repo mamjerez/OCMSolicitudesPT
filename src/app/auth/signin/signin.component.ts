@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { LocalStorageService, SessionStorageService } from 'ngx-webstorage';
 import { LogeadoService } from '../../services/logeado.service';
+// import { ISingIn } from '../../shared/models/singin.model';
 
 @Component({
   selector: 'app-signin',
@@ -17,11 +18,11 @@ export class SigninComponent implements OnInit {
   userName: string;
   password: string;
 
-  getErrorMessage() {
-    return this.email.hasError('required') ? 'You must enter a value' :
-      this.email.hasError('email') ? 'Not a valid email' :
-        '';
-  }
+  // getErrorMessage() {
+  //   return this.email.hasError('required') ? 'You must enter a value' :
+  //     this.email.hasError('email') ? 'Not a valid email' :
+  //       '';
+  // }
 
   constructor(
     public loginService: SigninService,
@@ -38,7 +39,6 @@ export class SigninComponent implements OnInit {
       userName: this.userName,
       password: this.password
     }).subscribe(response => {
-      console.log('La response: ' + response);
       if (response === 'usuario incorrecto' || response === 'password incorrecto') {
         if (response === 'usuario incorrecto') {
           Swal.fire({
@@ -57,11 +57,13 @@ export class SigninComponent implements OnInit {
           });
         }
       } else {
-        this.localStorage.store('authenticationToken', response.token );
-        // this.localStorage.store('authenticationToken', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InciLCJpYXQiOjE1NzIxNzgwNTUsImV4cCI6MTU3MjI2NDQ1NX0.QruxCDoPwa-ZgZWvjW7ZkCC886NlKwXXRL6ngpQ3V9M' );
+        const token = response.token;
+        this.localStorage.store('authenticationToken', token);
         this.logeadoService.estaLogeado();
         this.router.navigate(['/inicio']);
       }
+    }, error => {
+      console.log(error);
     });
   }
 }

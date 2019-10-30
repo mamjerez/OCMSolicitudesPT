@@ -5,22 +5,17 @@ import { LocalStorageService } from 'ngx-webstorage';
   providedIn: 'root'
 })
 export class LogeadoService {
-  logeado: string;
-  isLogeado: boolean;
+  isLogeado = false;
 
   constructor(private localStorage: LocalStorageService) { }
 
-  public estaLogeado(): string {
+  public estaLogeado() {
     if (this.localStorage.retrieve('authenticationToken')) {
-      this.logeado = 'logeado';
       this.isLogeado = true;
     } else {
-      this.logeado = 'NO logeado';
       this.isLogeado = false;
     }
-    console.log('¿Esta logeado? ' + this.logeado);
-    return this.logeado;
-    }
   }
+}
 
 
