@@ -12,7 +12,7 @@ export class LogeadoService {
   public estaLogeado() {
     if (this.localStorage.retrieve('authenticationToken')) {
       this.isLogeado = true;
-    } else {
+        } else {
       this.isLogeado = false;
     }
   }

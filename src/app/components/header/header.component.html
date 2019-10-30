@@ -4,8 +4,8 @@
   <!-- <img src="../../assets/images/IconoOCM-2.svg" alt="Logo OCM" height="42" width="42"> -->
 
   <div class="row">
-    <div class="col-md-1">
-        <svg
+     <div class="col-md-6">
+       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="40"
         height="40"
@@ -31,20 +31,14 @@
           transform="scale(0.75)"
         />
       </svg>
-    </div>
-    <div class="col-md-5">
-        <p
-        style="margin-left: 10px;color: white; font-size: 18px; font-weight: bold; display: inline"
-      >
+        <p>
         Consultas realizadas al Portal de Transparencia del Ayuntamiento de Jerez.
-      </p>
+          </p>
     </div>
-    <div class="col-md-6">
-        <div class="w-100">
-            <ul>
-                <li style="display: inline; margin-right: 12px">
+    <div class="col-md-6 text-right">
+               <ul>
+                <li style="display: inline; margin-right: 12px" *ngIf="logeadoService.isLogeado && rol === 'admin'">
                   <a
-
                     href="#"
                     id="navbarDropdown"
                     role="button"
@@ -63,28 +57,21 @@
                   </div>
                 </li>
 
-                <li style="display: inline; margin-right: 12px" *ngIf="logeadoService.isLogeado">
+                <li style="display: inline; margin-right: 12px" *ngIf="logeadoService.isLogeado && router.url !== '/inicio'">
                   <a href="#/inicio">Inicio </a>
                 </li>
-                <li style="display: inline; margin-right: 12px">
+                <li style="display: inline; margin-right: 12px" *ngIf="logeadoService.isLogeado && router.url !== '/profile'">
                   <a href="#/profile">Perfil </a>
                 </li>
-                <li style="display: inline; margin-right: 12px" >
-                  <a href="#/signIn">Iniciar sesión</a>
-                </li>
                 <!-- <li style="display: inline; margin-right: 12px">
-                  <a href="#/register">Registrarse</a>
+                  <a href="#/signIn">Iniciar sesión</a>
                 </li> -->
-                <li style="display: inline; margin-right: 12px" >
+                <li style="display: inline; margin-right: 12px; color: white" *ngIf="logeadoService.isLogeado" >
                   <a (click)="logout()">Cerrar sesión</a>
                 </li>
               </ul>
-        </div>
-    </div>
+          </div>
   </div>
-
-
-
 </nav>
 
 <!-- <nav class="navbar ml-4 mr-4 shadow" >

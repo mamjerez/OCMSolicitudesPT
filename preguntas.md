@@ -2,6 +2,7 @@
 
 # ¿Se utilizan para algo signin.module.ts y signin.route.ts?
 
+#  this.sessionStorage.clear('authenticationToken');
 
 
 

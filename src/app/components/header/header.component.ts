@@ -9,11 +9,12 @@ import { LogeadoService } from '../../services/logeado.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  rol = 'n';
 
   constructor(
     private localStorage: LocalStorageService,
-    private sessionStorage: SessionStorageService,
-    private router: Router,
+    // private sessionStorage: SessionStorageService,
+    public router: Router,
     public logeadoService: LogeadoService
   ) { }
 
@@ -22,7 +23,7 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.localStorage.clear('authenticationToken');
-    this.sessionStorage.clear('authenticationToken');
+    // this.sessionStorage.clear('authenticationToken');
     this.router.navigate(['/signIn']);
     this.logeadoService.estaLogeado();
   }
