@@ -14,7 +14,7 @@ import { LogeadoService } from '../../services/logeado.service';
 })
 
 export class SigninComponent implements OnInit {
-  email = new FormControl('', [Validators.required, Validators.email]);
+  // email = new FormControl('', [Validators.required, Validators.email]);
   userName: string;
   password: string;
 
@@ -25,17 +25,17 @@ export class SigninComponent implements OnInit {
   // }
 
   constructor(
-    public loginService: SigninService,
+    public signinService: SigninService,
     private router: Router,
     private localStorage: LocalStorageService,
-    private sessionStorage: SessionStorageService,
+    // private sessionStorage: SessionStorageService,
     private logeadoService: LogeadoService
     ) { }
 
   ngOnInit() {}
 
   signIn() {
-    this.loginService.signIn({
+    this.signinService.signIn({
       userName: this.userName,
       password: this.password
     }).subscribe(response => {
@@ -57,8 +57,8 @@ export class SigninComponent implements OnInit {
           });
         }
       } else {
-        const token = response.token;
-        this.localStorage.store('authenticationToken', token);
+        // const token = response.token;
+        this.localStorage.store('authenticationToken', response.token);
         this.logeadoService.estaLogeado();
         this.router.navigate(['/inicio']);
       }

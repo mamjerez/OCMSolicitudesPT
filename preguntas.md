@@ -1,12 +1,8 @@
 
 
-# signin.componet.ts
-Error token
- LInea 60: this.localStorage.store('authenticationToken', response.token);
-           interface Object {
-Linea 121      token: any;
-en lib.es5.d.ts
-C:\Users\pc\AppData\Local\Programs\Microsoft VS Code\resources\app\extensions\node_modules\typescript\lib\lib.es5.d.ts
+# ¿Se utilizan para algo signin.module.ts y signin.route.ts?
+
+
 
 
 
