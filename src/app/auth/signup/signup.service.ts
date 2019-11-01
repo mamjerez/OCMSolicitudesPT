@@ -33,6 +33,7 @@ export class SignupService {
   */
 
   signUp(user: any) {
+    console.log(user);
     try {
          return this.http.post (this.resourceUrl, user);
     } catch (error) {

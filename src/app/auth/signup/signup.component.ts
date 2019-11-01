@@ -8,6 +8,8 @@ import { User } from './../../shared/models/user.model';
 import { SignupService } from '../signup/signup.service';
 // import { IUser } from 'src/app/shared/models/user.model';
 import { MyValidators } from '../../libs/validators';
+import { LogeadoService } from '../../services/logeado.service';
+
 
 @Component({
   selector: 'app-signup',
@@ -22,6 +24,7 @@ export class SignupComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     public signupService: SignupService,
+    private logeadoService: LogeadoService,
     // private matSnackBar: MatSnackBar,
     private router: Router
     ) {
@@ -97,9 +100,9 @@ export class SignupComponent implements OnInit {
       this.user.idUserUpdate = 1;
      }
 
-    // console.log(this.user);
     this.signupService.signUp(this.user).subscribe((response => {
-      if (response === 'user creado') {
+       console.log(response);
+       if (response === 'user creado') {
         Swal.fire({
           position: 'top-end',
           type: 'success',
@@ -107,11 +110,11 @@ export class SignupComponent implements OnInit {
           showConfirmButton: false,
           timer: 3000
         });
+        this.logeadoService.estaLogeado();
         this.router.navigate(['/inicio']);
       } else {
-        // console.log(response);
-        errorText = JSON.stringify(response);
-        // console.log(errorText);
+        console.log(JSON.stringify(response));
+        errorText = 'Error en la conexión.';
         Swal.fire({
           title: '¡Error!',
           text: errorText,
