@@ -2,7 +2,7 @@
 
 # ¿Se utilizan para algo signin.module.ts y signin.route.ts?
 
-#  this.sessionStorage.clear('authenticationToken');
+# En header.componet.ts, ¿Para qué esta linea? this.sessionStorage.clear('authenticationToken');
 
 # ¿Qué errores deberia controlar en users.service.ts?
 

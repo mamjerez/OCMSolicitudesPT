@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-import { SigninService } from './signin.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { LocalStorageService, SessionStorageService } from 'ngx-webstorage';
-import { LogeadoService } from '../../services/logeado.service';
 // import { ISingIn } from '../../shared/models/singin.model';
+// import { FormControl, Validators } from '@angular/forms';
+// import { SigninService } from './signin.service';
+
+import { LogeadoService } from '../../services/logeado.service';
+import { UsersService } from '../../../app/admin/users/users.service';
 
 @Component({
   selector: 'app-signin',
@@ -25,7 +27,8 @@ export class SigninComponent implements OnInit {
   // }
 
   constructor(
-    public signinService: SigninService,
+    // public signinService: SigninService,
+    public userService: UsersService,
     private router: Router,
     private localStorage: LocalStorageService,
     // private sessionStorage: SessionStorageService,
@@ -35,7 +38,8 @@ export class SigninComponent implements OnInit {
   ngOnInit() {}
 
   signIn() {
-    this.signinService.signIn({
+    // this.signinService.signIn({
+    this.userService.signIn({
       userName: this.userName,
       password: this.password
     }).subscribe(response => {

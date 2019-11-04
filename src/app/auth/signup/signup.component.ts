@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-// import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 import { User } from './../../shared/models/user.model';
-import { SignupService } from '../signup/signup.service';
-// import { IUser } from 'src/app/shared/models/user.model';
+// import { SignupService } from '../signup/signup.service';
+import { UsersService } from '../../../app/admin/users/users.service';
 import { MyValidators } from '../../libs/validators';
 import { LogeadoService } from '../../services/logeado.service';
-
 
 @Component({
   selector: 'app-signup',
@@ -23,18 +21,18 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    public signupService: SignupService,
+    // public signupService: SignupService,
+    private usersService: UsersService,
     private logeadoService: LogeadoService,
-    // private matSnackBar: MatSnackBar,
     private router: Router
-    ) {
-      this.buildForm();
-   }
+  ) {
+    this.buildForm();
+  }
 
   ngOnInit() {
     this.user = new User();
     // console.log(this.user);
-    }
+  }
 
   private buildForm() {
     this.form = this.formBuilder.group({
@@ -52,38 +50,34 @@ export class SignupComponent implements OnInit {
 
   // #region  Nombres de campos para usar en HTML.
   get nombreField() {
-      return this.form.get('nombre');
-    }
+    return this.form.get('nombre');
+  }
 
-    get apellido1Field() {
-      return this.form.get('apellido1');
-    }
+  get apellido1Field() {
+    return this.form.get('apellido1');
+  }
 
-    get apellido2Field() {
-      return this.form.get('apellido2');
-    }
-    get emailField() {
-      return this.form.get('email');
-    }
+  get apellido2Field() {
+    return this.form.get('apellido2');
+  }
+  get emailField() {
+    return this.form.get('email');
+  }
 
-    get userNameField() {
-      return this.form.get('userName');
-    }
+  get userNameField() {
+    return this.form.get('userName');
+  }
 
-    get passwordField() {
-      return this.form.get('password');
-    }
+  get passwordField() {
+    return this.form.get('password');
+  }
 
-    get confirmPasswordField() {
-      return this.form.get('confirmPassword');
-    }
-    //#endregion
+  get confirmPasswordField() {
+    return this.form.get('confirmPassword');
+  }
+  //#endregion
 
-    // private openMessage(message: string) {
-    //   this.matSnackBar.open(message, 'Cerrar');
-    // }
-
-  signUp() {
+   signUp() {
     let errorText: string;
 
     if (this.form.valid) {
@@ -98,11 +92,11 @@ export class SignupComponent implements OnInit {
       // this.user.time_update = new Date();
       this.user.idUserCreate = 1;
       this.user.idUserUpdate = 1;
-     }
+    }
 
-    this.signupService.signUp(this.user).subscribe((response => {
-      //  console.log(response);
-       if (response === 'user creado') {
+    // this.signupService.signUp(this.user).subscribe((response => {
+    this.usersService.signUp(this.user).subscribe((response => {
+     if (response === 'user creado') {
         Swal.fire({
           position: 'top-end',
           type: 'success',
@@ -126,8 +120,8 @@ export class SignupComponent implements OnInit {
   }
 
   leerPolitica() {
-     Swal.fire({
-    html: `
+    Swal.fire({
+      html: `
     <div>
     <h4 style = "color: rgb(20, 20, 230);text-align: center">Política de privacidad de ocmjerez.org</h4>
         <h6 style = "color:red; text-align: center; text-align: justify">Para recibir la información sobre

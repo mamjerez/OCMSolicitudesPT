@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+import { ISingIn } from '../../shared/models/singin.model';
 
 @Injectable({
   providedIn: 'root'
@@ -44,4 +47,33 @@ export class UsersService {
       //  console.log(error);
     }
   }
+
+  delete(id: number): Observable<HttpResponse<any>> {
+    return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
+  }
+
+
+
+signIn(user: any) {
+  // Los errores se manejan signin.component.ts.
+  // Los services deben realizar unicamente las funciones imprescindibles.
+  try {
+    // Es necesario definir la Interface ISingIn para que tenga la propiedad token.
+    return this.http.post<ISingIn>(this.resourceUrl, user);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+//  signUp(user: any) {
+//   return this.http.post(`${this.resourceUrl}/${user}}`, { observe: 'response' });
+//     }
+signUp(user: any) {
+      try {
+           return this.http.post (this.resourceUrl, user);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
 }

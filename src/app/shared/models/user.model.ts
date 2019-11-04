@@ -25,8 +25,8 @@ export class User implements IUser {
     public password?: string | null,
     public avatarUrl?: string | null,
     public observaciones?: string | null,
-    public createdAt?: Date,
-    public updatedAt?: Date,
+    public createAt?: Date,
+    public updateAt?: Date,
     public idUserCreate?: number | null,
     public idUserUpdate?: number | null
   ) {
@@ -42,8 +42,8 @@ export class User implements IUser {
     this.avatarUrl = avatarUrl ? avatarUrl : null;
     this.observaciones = observaciones ? observaciones : null;
     // No iniciarlos a null para que tome los valores por defecto en MySQL.
-    // this.createdAt = createdAt ? createdAt : null;
-    // this.updatedAt = updatedAt ? updatedAt : null;
+    // this.createAt = createAt ? createdAt : null;
+    // this.updateAt = updateAt ? updatedAt : null;
     this.idUserCreate = idUserCreate ? idUserCreate : null;
     this.idUserUpdate = idUserUpdate ? idUserUpdate : null;
         }

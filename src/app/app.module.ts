@@ -65,7 +65,7 @@ import { User } from './shared/models/user.model';
       useClass: AuthInterceptor,
       multi: true
     },
-    // User
+
   ],
   bootstrap: [AppComponent]
 })
