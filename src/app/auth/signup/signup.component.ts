@@ -101,7 +101,7 @@ export class SignupComponent implements OnInit {
      }
 
     this.signupService.signUp(this.user).subscribe((response => {
-       console.log(response);
+      //  console.log(response);
        if (response === 'user creado') {
         Swal.fire({
           position: 'top-end',

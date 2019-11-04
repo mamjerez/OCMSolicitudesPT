@@ -1,4 +1,7 @@
-<button (click)="getSelectedRows()">Get Selected Rows</button>
+<div style="text-align:center; margin-bottom: 10px;">
+<button (click)="deleteSelectedUser()">Borrar</button>
+<button style="margin-left: 10px" (click)="editSelectedUser()">Editar</button>
+</div>
 
 <ag-grid-angular
 #agGrid
@@ -6,7 +9,10 @@ style="width: 900px; height: 650px; margin: auto"
 class="ag-theme-balham"
 [rowData]="users"
 [columnDefs]="columnDefs"
-rowSelection="multiple"
 [autoGroupColumnDef]="autoGroupColumnDef"
+(gridReady)="onGridReady($event)"
 >
 </ag-grid-angular>
+
+
+<!-- rowSelection="multiple" -->

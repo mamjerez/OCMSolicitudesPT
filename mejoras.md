@@ -1,5 +1,5 @@
 
-
+# https://github.com/AlexKhymenko/ngx-permissions/wiki
 
 # Ideas desde el curso Angular 8 de EscuelaIT. https://escuela.it/cursos/curso-angular-8/clase/autenticacion-de-usuarios-y-seguridad-en-angular
 Auth:

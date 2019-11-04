@@ -49,7 +49,6 @@ export class User implements IUser {
         }
 }
 
-
 // Para usarlo en otros Componnets.
 // user: User;
 

@@ -9,7 +9,7 @@ import { LogeadoService } from '../../services/logeado.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  rol = 'n';
+  rol = 'admin';
 
   constructor(
     private localStorage: LocalStorageService,

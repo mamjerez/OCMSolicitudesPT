@@ -27,6 +27,9 @@ import { UserAgGridComponent } from './admin/users/user-ag-grid/user-ag-grid.com
 import { UserBootstrapComponent } from './admin/users/user-bootstrap/user-bootstrap.component';
 import { UserMaterialComponent } from './admin/users/user-material/user-material.component';
 
+import { User } from './shared/models/user.model';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +64,8 @@ import { UserMaterialComponent } from './admin/users/user-material/user-material
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
-    }
+    },
+    // User
   ],
   bootstrap: [AppComponent]
 })
