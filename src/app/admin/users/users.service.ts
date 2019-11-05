@@ -52,14 +52,12 @@ export class UsersService {
     return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
   }
 
-
-
 signIn(user: any) {
   // Los errores se manejan signin.component.ts.
   // Los services deben realizar unicamente las funciones imprescindibles.
   try {
     // Es necesario definir la Interface ISingIn para que tenga la propiedad token.
-    return this.http.post<ISingIn>(this.resourceUrl, user);
+    return this.http.post<ISingIn>(`${this.resourceUrl}/signin`, user);
   } catch (error) {
     console.log(error);
   }

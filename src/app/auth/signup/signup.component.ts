@@ -22,7 +22,7 @@ export class SignupComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     // public signupService: SignupService,
-    private usersService: UsersService,
+    public usersService: UsersService,
     private logeadoService: LogeadoService,
     private router: Router
   ) {

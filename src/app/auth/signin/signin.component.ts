@@ -43,6 +43,7 @@ export class SigninComponent implements OnInit {
       userName: this.userName,
       password: this.password
     }).subscribe(response => {
+      console.log(response);
       if (response === 'usuario incorrecto' || response === 'password incorrecto') {
         if (response === 'usuario incorrecto') {
           Swal.fire({
@@ -62,6 +63,7 @@ export class SigninComponent implements OnInit {
         }
       } else {
         // const token = response.token;
+        console.log(response.token);
         this.localStorage.store('authenticationToken', response.token);
         this.logeadoService.estaLogeado();
         this.router.navigate(['/inicio']);

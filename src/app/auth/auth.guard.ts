@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 import { CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { LocalStorageService, SessionStorageService } from 'ngx-webstorage';
-import { SigninService } from './signin/signin.service';
+
+// import { SigninService } from './signin/signin.service';
+import { UsersService } from '../../app/admin/users/users.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +15,8 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     private router: Router,
     private localStorage: LocalStorageService,
     private sessionStorage: SessionStorageService,
-    public signinService: SigninService
+    // public signinService: SigninService
+    public userService: UsersService
     ) {}
 
   canActivate(
