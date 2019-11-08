@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 import { User } from './../../shared/models/user.model';
-// import { SignupService } from '../signup/signup.service';
 import { UsersService } from '../../../app/admin/users/users.service';
 import { MyValidators } from '../../libs/validators';
 import { LogeadoService } from '../../services/logeado.service';
@@ -21,7 +20,6 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    // public signupService: SignupService,
     public usersService: UsersService,
     private logeadoService: LogeadoService,
     private router: Router
@@ -30,9 +28,7 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.user = new User();
-    // console.log(this.user);
-  }
+     }
 
   private buildForm() {
     this.form = this.formBuilder.group({
@@ -78,6 +74,7 @@ export class SignupComponent implements OnInit {
   //#endregion
 
    signUp() {
+    this.user = new User();
     let errorText: string;
 
     if (this.form.valid) {
@@ -93,8 +90,6 @@ export class SignupComponent implements OnInit {
       this.user.idUserCreate = 1;
       this.user.idUserUpdate = 1;
     }
-
-    // this.signupService.signUp(this.user).subscribe((response => {
     this.usersService.signUp(this.user).subscribe((response => {
      if (response === 'user creado') {
         Swal.fire({

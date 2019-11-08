@@ -13,6 +13,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { UserAgGridComponent } from './admin/users/user-ag-grid/user-ag-grid.component';
 import { UserBootstrapComponent } from './admin/users/user-bootstrap/user-bootstrap.component';
 import { UserMaterialComponent } from './admin/users/user-material/user-material.component';
+import { UserUpdateComponent } from './admin/users/user-update/user-update.component';
 
 const appRoutes: Routes = [
   { path: 'signIn',  component: SigninComponent },
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
   { path: 'usersAgGrid',  component: UserAgGridComponent },
   { path: 'usersBootstrap',  component: UserBootstrapComponent },
   { path: 'usersMaterial',  component: UserMaterialComponent },
+  { path: 'updateUser',  component: UserUpdateComponent },
 
   { path: '**', pathMatch: 'full', component: Page404Component }
 ];

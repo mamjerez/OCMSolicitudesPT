@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { AgGridAngular } from 'ag-grid-angular';
 import Swal from 'sweetalert2';
 
@@ -16,7 +17,8 @@ export class UserAgGridComponent implements OnInit {
   private gridApi;
 
   constructor(
-    private usersService: UsersService
+    private usersService: UsersService,
+    public router: Router
   ) { }
 
   columnDefs = [
@@ -89,14 +91,15 @@ export class UserAgGridComponent implements OnInit {
     this.gridApi = params.api; // To access the grids API
   }
 
-  editSelectedUser() {
-    Swal.fire({
-      position: 'top-end',
-      type: 'success',
-      title: '¡Aqui ira el código de update!',
-      showConfirmButton: false,
-      timer: 3000
-    });
+  updateSelectedUser() {
+    this.router.navigate(['/updateUser']);
+    // Swal.fire({
+    //   position: 'top-end',
+    //   type: 'success',
+    //   title: '¡Aqui ira el código de update!',
+    //   showConfirmButton: false,
+    //   timer: 3000
+    // });
   }
 
   createUser() {
