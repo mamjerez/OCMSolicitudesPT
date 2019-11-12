@@ -23,9 +23,9 @@ const appRoutes: Routes = [
   { path: 'profile', canActivate: [AuthGuard], component: ProfileComponent },
 
   { path: 'usersAgGrid',  component: UserAgGridComponent },
-  { path: 'usersBootstrap',  component: UserBootstrapComponent },
-  { path: 'usersMaterial',  component: UserMaterialComponent },
-  { path: 'updateUser',  component: UserUpdateComponent },
+  // { path: 'usersBootstrap',  component: UserBootstrapComponent },
+  // { path: 'usersMaterial',  component: UserMaterialComponent },
+  { path: 'updateUser/:id',  component: UserUpdateComponent },
 
   { path: '**', pathMatch: 'full', component: Page404Component }
 ];

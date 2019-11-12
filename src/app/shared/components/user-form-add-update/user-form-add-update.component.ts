@@ -7,12 +7,13 @@ import { User } from '../../../shared/models/user.model';
 import { UsersService } from '../../../../app/admin/users/users.service';
 import { MyValidators } from '../../../libs/validators';
 
+
 @Component({
-  selector: 'app-user-update',
-  templateUrl: './user-update.component.html',
-  styleUrls: ['./user-update.component.css']
+  selector: 'app-user-form-add-update',
+  templateUrl: './user-form-add-update.component.html',
+  styleUrls: ['./user-form-add-update.component.css']
 })
-export class UserUpdateComponent implements OnInit {
+export class UserFormAddUpdateComponent implements OnInit {
   user: User;
   form: FormGroup;
   @ViewChild('email', {static: false}) email: ElementRef;
@@ -150,9 +151,3 @@ export class UserUpdateComponent implements OnInit {
     });
   }
 }
-
-
-// const element = this.renderer.selectRootElement('#input1');
-
-// setTimeout(() => element.focus, 0);
-// setTimeout(() => element.focus(), 0);

@@ -28,6 +28,7 @@ import { UserBootstrapComponent } from './admin/users/user-bootstrap/user-bootst
 import { UserMaterialComponent } from './admin/users/user-material/user-material.component';
 
 import { User } from './shared/models/user.model';
+import { UserFormAddUpdateComponent } from './shared/components/user-form-add-update/user-form-add-update.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { User } from './shared/models/user.model';
     UserAgGridComponent,
     UserBootstrapComponent,
     UserMaterialComponent,
+    UserFormAddUpdateComponent,
     // FontAwesomeModule,
   ],
   imports: [

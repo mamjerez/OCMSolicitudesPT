@@ -12,9 +12,16 @@ p {
   box-shadow: 11px 10px 5px 0px rgba(240, 43, 8, 0.75);
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1040px) {
   p {
       font-size: 10px;
+
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  p {
+      font-size: 12px;
 
   }
 }

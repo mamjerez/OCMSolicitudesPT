@@ -92,7 +92,7 @@ export class UserAgGridComponent implements OnInit {
   }
 
   updateSelectedUser() {
-    this.router.navigate(['/updateUser']);
+    this.router.navigate(['/updateUser', this.SelectedUser()[0].idUser]);
     // Swal.fire({
     //   position: 'top-end',
     //   type: 'success',

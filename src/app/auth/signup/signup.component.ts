@@ -17,6 +17,7 @@ import { LogeadoService } from '../../services/logeado.service';
 export class SignupComponent implements OnInit {
   user: User;
   form: FormGroup;
+  errorText: string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -28,7 +29,7 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit() {
-     }
+  }
 
   private buildForm() {
     this.form = this.formBuilder.group({
@@ -73,9 +74,9 @@ export class SignupComponent implements OnInit {
   }
   //#endregion
 
-   signUp() {
+  signUp() {
     this.user = new User();
-    let errorText: string;
+    // let errorText: string;
 
     if (this.form.valid) {
       this.user.nombre = this.form.value.nombre;
@@ -91,7 +92,7 @@ export class SignupComponent implements OnInit {
       this.user.idUserUpdate = 1;
     }
     this.usersService.signUp(this.user).subscribe((response => {
-     if (response === 'user creado') {
+      if (response === 'user creado') {
         Swal.fire({
           position: 'top-end',
           type: 'success',
@@ -102,11 +103,14 @@ export class SignupComponent implements OnInit {
         this.logeadoService.estaLogeado();
         this.router.navigate(['/inicio']);
       } else {
-        console.log(JSON.stringify(response));
-        errorText = 'Error en la conexión.';
+        if (JSON.stringify(response).includes('nombre')) {
+          this.errorText = 'El nombre de usuario ya existe';
+        } else {
+          this.errorText = 'El email ya existe';
+        }
         Swal.fire({
           title: '¡Error!',
-          text: errorText,
+          text: this.errorText,
           type: 'error',
           confirmButtonText: 'Aceptar'
         });

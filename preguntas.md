@@ -1,8 +1,8 @@
 
+# No consigo poner el focus en email.
 
-# ¿Se utilizan para algo signin.module.ts y signin.route.ts?
+# Debe comprobar los cambios al perder el foco no solo en change.
 
-# En header.componet.ts, ¿Para qué esta linea? this.sessionStorage.clear('authenticationToken');
 
 # ¿Qué errores deberia controlar en users.service.ts?
 
