@@ -15,6 +15,7 @@ export class LogeadoService {
         } else {
       this.isLogeado = false;
     }
+    return this.isLogeado;
   }
 }
 

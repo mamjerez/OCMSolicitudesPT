@@ -1,5 +1,8 @@
 <header class="title">
-  <h1 *ngIf = isUpdate>Actualizar datos usuario.</h1>
+  <!-- <h1 *ngIf = isUpdate>Actualizar datos usuario.</h1> -->
+  <div *ngIf="isUpdate; then thenBlock else elseBlock"></div>
+  <ng-template #thenBlock><h1>Actualizar datos usuario.</h1></ng-template>
+  <ng-template #elseBlock>Formulario de registro.</ng-template>
 </header>
 
 <div>
@@ -19,6 +22,7 @@
                 type="text"
                 formControlName="nombre"
                 class="form-control"
+                autofocus
               />
               <mat-error *ngIf="nombreField.hasError('required')">
                 Obligatorio.
@@ -108,7 +112,7 @@
               <label>Nombre usuario:</label>
             </div>
             <div class="col-8">
-              <input
+              <input #nombreUsuario
                 placeholder="Nombre usuario"
                 matInput
                 type="text"
@@ -182,6 +186,32 @@
 
         <div class="row" style="margin-top: 40px">
           <div class="col-12">
+
+
+              <div *ngIf="isUpdate; then thenBlock1 else elseBlock1"></div>
+              <ng-template #thenBlock1>
+             </ng-template>
+
+ <ng-template #elseBlock1>
+    <a
+    onmouseover="this.style.cursor='pointer'"
+    onmouseout="this.style.cursor='default'"
+    (click)="leerPolitica()"
+    style="color:blue"
+  >
+    Leer política.
+  </a>
+
+  <div class="checkbox">
+    <input type="checkbox" />
+    <h6 id="textoLegal">
+      Acepto los terminos de Uso y Protección de Datos.
+    </h6>
+  </div>
+ </ng-template>
+
+
+
             <div>
               <!-- <p *ngIf="form.invalid">form.invalid</p> -->
               <button

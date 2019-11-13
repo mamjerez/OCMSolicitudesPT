@@ -7,7 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AgGridModule } from 'ag-grid-angular';
-
+import 'hammerjs';
 
 import { SigninComponent } from './auth/signin/signin.component';
 import { AppComponent } from './app.component';
