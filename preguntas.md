@@ -1,15 +1,6 @@
 
-# No consigo poner el focus en email.
-
+# Pasar fecha de updatedAt
 # Debe comprobar los cambios al perder el foco no solo en change.
-
-
-# ¿Qué errores deberia controlar en users.service.ts?
-
-# Si no devuelvo nada no tengo informacion en component.ts
-
-
-
 
 
 
@@ -51,7 +42,7 @@ Usar momentjs
 # Devolver al client, para poder mostrarlos. los posible errores al ejecutar un query en el server.
 
 # signup.component.html
-
+# No consigo poner el focus en email.
 Funcionamiento checkbox.
 
 Instalar token y guard

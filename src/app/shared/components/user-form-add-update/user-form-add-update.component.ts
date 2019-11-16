@@ -2,6 +2,7 @@ import { Component, OnInit,  ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
+import { LocalStorageService, SessionStorageService } from 'ngx-webstorage';
 
 import { User } from '../../../shared/models/user.model';
 import { UsersService } from '../../../../app/admin/users/users.service';
@@ -19,13 +20,15 @@ export class UserFormAddUpdateComponent implements OnInit {
   form: FormGroup;
   @ViewChild('email', {static: false}) emailFie: ElementRef;
   isUpdate = this.logeadoService.estaLogeado();
+  errorText: string;
 
   constructor(
     private formBuilder: FormBuilder,
     public usersService: UsersService,
     private router: Router,
     private activateRoute: ActivatedRoute,
-    private logeadoService: LogeadoService
+    private logeadoService: LogeadoService,
+    private localStorage: LocalStorageService,
      ) {
     this.buildForm();
   }
@@ -47,15 +50,22 @@ export class UserFormAddUpdateComponent implements OnInit {
       validators: [MyValidators.isValidPassword]
     });
 
-    // Recibe el id como parametro. + lo convierte a number.
+
+    if (this.isUpdate) {
+    console.log('Vamos con el update');
+      // Recibe el id como parametro. + lo convierte a number.
     const id = +this.activateRoute.snapshot.paramMap.get('id');
     this.usersService.getUser(id).subscribe((response => {
-      this.form.controls.nombre.setValue(`${response[0].nombre}`);
-      this.form.controls.apellido1.setValue(`${response[0].apellido1}`);
-      this.form.controls.apellido2.setValue(`${response[0].apellido2}`);
-      this.form.controls.email.setValue(`${response[0].email}`);
-      this.form.controls.userName.setValue(`${response[0].userName}`);
-    }));
+        this.form.controls.nombre.setValue(`${response[0].nombre}`);
+        this.form.controls.apellido1.setValue(`${response[0].apellido1}`);
+        this.form.controls.apellido2.setValue(`${response[0].apellido2}`);
+        this.form.controls.email.setValue(`${response[0].email}`);
+        this.form.controls.userName.setValue(`${response[0].userName}`);
+        this.form.controls.password.setValue(`${response[0].password}`);
+        this.form.controls.confirmPassword.setValue(`${response[0].password}`);
+      }));
+    }
+
   }
 
   // #region  Nombres de campos para usar en HTML.
@@ -88,6 +98,7 @@ export class UserFormAddUpdateComponent implements OnInit {
   //#endregion
 
   update() {
+    if (this.isUpdate) {
     this.user = new User();
     if (this.form.valid) {
       this.user.idUser = +this.activateRoute.snapshot.paramMap.get('id');
@@ -97,10 +108,13 @@ export class UserFormAddUpdateComponent implements OnInit {
       this.user.email = this.form.value.email;
       this.user.userName = this.form.value.userName;
       this.user.password = this.form.value.password;
-      // this.user.idUserCreate = 1;
-      // this.user.idUserUpdate = 1;
+      // this.user.createAt = new Date();
+      // this.user.updateAt = new Date();
+      this.user.idUserCreate = 1;
+      this.user.idUserUpdate = 1;
     }
     this.usersService.update(this.user).subscribe((response => {
+      console.log(response);
       if (JSON.stringify(response).includes('updated')) {
         Swal.fire({
           position: 'top-end',
@@ -119,9 +133,53 @@ export class UserFormAddUpdateComponent implements OnInit {
         });
       }
     }));
+  } else {
+    this.user = new User();
+    if (this.form.valid) {
+      this.user.nombre = this.form.value.nombre;
+      this.user.apellido1 = this.form.value.apellido1;
+      this.user.apellido2 = this.form.value.apellido2;
+      this.user.email = this.form.value.email;
+      this.user.userName = this.form.value.userName;
+      this.user.password = this.form.value.password;
+      // No se inician para que tome los valores por defecto en MySQL
+      // this.user.time_create = new Date();
+      // this.user.time_update = new Date();
+      this.user.idUserCreate = 1;
+      this.user.idUserUpdate = 1;
+    }
+    this.usersService.signUp(this.user).subscribe((response => {
+      console.log(response);
+      if (response === 'user creado') {
+        Swal.fire({
+          position: 'top-end',
+          type: 'success',
+          title: '¡Te has registrado correctamente!',
+          showConfirmButton: false,
+          timer: 3000
+        });
+        this.logeadoService.estaLogeado();
+        this.router.navigate(['/inicio']);
+      } else {
+        if (JSON.stringify(response).includes('nombre')) {
+          this.errorText = 'El nombre de usuario ya existe';
+        } else {
+          this.errorText = 'El email ya existe';
+        }
+        Swal.fire({
+          title: '¡Error!',
+          text: this.errorText,
+          type: 'error',
+          confirmButtonText: 'Aceptar'
+        });
+      }
+    }));
   }
+   }
 
   validateEmail() {
+    if (this.isUpdate) {
+    console.log('Vamos a comprobar el email');
     this.usersService.findEmail(this.form.value.email, +this.activateRoute.snapshot.paramMap.get('id')).subscribe(response => {
       if (response[0]) {
         console.log(this.emailFie.nativeElement);
@@ -135,8 +193,10 @@ export class UserFormAddUpdateComponent implements OnInit {
       }
     });
   }
+  }
 
   validateUserName() {
+    if (this.isUpdate) {
     this.usersService.findUserName(this.form.value.userName, +this.activateRoute.snapshot.paramMap.get('id')).subscribe(response => {
       console.log(response[0]);
       if (response[0]) {
@@ -151,6 +211,7 @@ export class UserFormAddUpdateComponent implements OnInit {
         setTimeout(() => this.emailFie.nativeElement.focus(), 0);
       }
     });
+  }
   }
 
   leerPolitica() {
