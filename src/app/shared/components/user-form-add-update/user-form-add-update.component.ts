@@ -8,6 +8,7 @@ import { User } from '../../../shared/models/user.model';
 import { UsersService } from '../../../../app/admin/users/users.service';
 import { MyValidators } from '../../../libs/validators';
 import { LogeadoService } from '../../../services/logeado.service';
+// import * as moment from 'moment';
 
 
 @Component({
@@ -50,23 +51,20 @@ export class UserFormAddUpdateComponent implements OnInit {
       validators: [MyValidators.isValidPassword]
     });
 
-
     if (this.isUpdate) {
-    console.log('Vamos con el update');
-      // Recibe el id como parametro. + lo convierte a number.
+    // Recibe el id como parametro. + lo convierte a number.
     const id = +this.activateRoute.snapshot.paramMap.get('id');
     this.usersService.getUser(id).subscribe((response => {
-        this.form.controls.nombre.setValue(`${response[0].nombre}`);
-        this.form.controls.apellido1.setValue(`${response[0].apellido1}`);
-        this.form.controls.apellido2.setValue(`${response[0].apellido2}`);
-        this.form.controls.email.setValue(`${response[0].email}`);
-        this.form.controls.userName.setValue(`${response[0].userName}`);
-        this.form.controls.password.setValue(`${response[0].password}`);
-        this.form.controls.confirmPassword.setValue(`${response[0].password}`);
+      this.form.controls.nombre.setValue(`${response[0].nombre}`);
+      this.form.controls.apellido1.setValue(`${response[0].apellido1}`);
+      this.form.controls.apellido2.setValue(`${response[0].apellido2}`);
+      this.form.controls.email.setValue(`${response[0].email}`);
+      this.form.controls.userName.setValue(`${response[0].userName}`);
+      this.form.controls.password.setValue(`${response[0].password}`);
+      this.form.controls.confirmPassword.setValue(`${response[0].password}`);
       }));
     }
-
-  }
+ }
 
   // #region  Nombres de campos para usar en HTML.
   get nombreField() {
@@ -108,13 +106,12 @@ export class UserFormAddUpdateComponent implements OnInit {
       this.user.email = this.form.value.email;
       this.user.userName = this.form.value.userName;
       this.user.password = this.form.value.password;
-      // this.user.createAt = new Date();
-      // this.user.updateAt = new Date();
+      this.user.updateAt = new Date().toISOString().slice(0, 19).replace('T', ' ');
+      // this.user.updateAt =  moment( new Date(), 'YYYY-MM-DDTHH:mm').format('YYYY-MM-DD HH:mm:ss');
       this.user.idUserCreate = 1;
       this.user.idUserUpdate = 1;
-    }
+      }
     this.usersService.update(this.user).subscribe((response => {
-      console.log(response);
       if (JSON.stringify(response).includes('updated')) {
         Swal.fire({
           position: 'top-end',
@@ -149,8 +146,7 @@ export class UserFormAddUpdateComponent implements OnInit {
       this.user.idUserUpdate = 1;
     }
     this.usersService.signUp(this.user).subscribe((response => {
-      console.log(response);
-      if (response === 'user creado') {
+     if (response === 'user creado') {
         Swal.fire({
           position: 'top-end',
           type: 'success',
@@ -334,6 +330,5 @@ export class UserFormAddUpdateComponent implements OnInit {
     `,
     });
   }
-
 
 }

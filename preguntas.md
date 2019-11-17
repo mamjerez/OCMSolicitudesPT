@@ -1,5 +1,5 @@
+  this.user.updateAt =  moment( new Date(), 'YYYY-MM-DDTHH:mm').format('YYYY-MM-DD HH:mm:ss');
 
-# Pasar fecha de updatedAt
 # Debe comprobar los cambios al perder el foco no solo en change.
 
 
@@ -43,9 +43,12 @@ Usar momentjs
 
 # signup.component.html
 # No consigo poner el focus en email.
-Funcionamiento checkbox.
+Funcionamiento checkbox. 😱
 
 Instalar token y guard
 https://codeburst.io/build-a-rest-api-for-node-mysql-2018-jwt-6957bcfc7ac9
 https://medium.com/devc-kano/basics-of-authentication-using-passport-and-jwt-with-sequelize-and-mysql-database-748e09d01bab
 https://jonathanmh.com/express-passport-json-web-token-jwt-authentication-beginners/
+
+
+# Pasar fecha de updatedAt

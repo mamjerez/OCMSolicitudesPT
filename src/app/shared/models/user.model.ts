@@ -1,3 +1,5 @@
+import { Moment } from 'moment';
+
 export interface IUser {
   idUser?: number | null;
   nombre?: string | null;
@@ -9,7 +11,7 @@ export interface IUser {
   avatarUrl?: string | null;
   observaciones?: string | null;
   createdAt?: Date;
-  updatedAt?: Date ;
+  updatedAt?: string ;
   idUserCreate?: number | null;
   idUserUpdate?: number | null;
 }
@@ -26,7 +28,7 @@ export class User implements IUser {
     public avatarUrl?: string | null,
     public observaciones?: string | null,
     public createAt?: Date,
-    public updateAt?: Date,
+    public updateAt?: string,
     public idUserCreate?: number | null,
     public idUserUpdate?: number | null
   ) {

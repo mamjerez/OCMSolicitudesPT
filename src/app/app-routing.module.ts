@@ -9,7 +9,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { PoliticaPrivacidadComponent } from './auth/politica-privacidad/politica-privacidad.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AuthGuard } from './auth/auth.guard';
-
+import * as moment from 'moment';
 import { UserAgGridComponent } from './admin/users/user-ag-grid/user-ag-grid.component';
 import { UserBootstrapComponent } from './admin/users/user-bootstrap/user-bootstrap.component';
 import { UserMaterialComponent } from './admin/users/user-material/user-material.component';
