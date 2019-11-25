@@ -1,0 +1,16 @@
+<div style="text-align:center; margin-bottom: 10px;">
+  <button (click)="deleteSelectedUser()">Borrar</button>
+  <button style="margin-left: 10px" (click)="updateSelectedUser()">Editar</button>
+  <button style="margin-left: 10px" (click)="createUser()">Create</button>
+  </div>
+
+  <ag-grid-angular
+  #agGrid
+  style="width: 900px; height: 650px; margin: auto"
+  class="ag-theme-balham"
+  [rowData]="solicitudes"
+  [columnDefs]="columnDefs"
+  [autoGroupColumnDef]="autoGroupColumnDef"
+  (gridReady)="onGridReady($event)"
+  >
+  </ag-grid-angular>

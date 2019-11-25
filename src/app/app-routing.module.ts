@@ -14,6 +14,7 @@ import { UserAgGridComponent } from './admin/users/user-ag-grid/user-ag-grid.com
 import { UserBootstrapComponent } from './admin/users/user-bootstrap/user-bootstrap.component';
 import { UserMaterialComponent } from './admin/users/user-material/user-material.component';
 import { UserUpdateComponent } from './admin/users/user-update/user-update.component';
+import { SolicitudesComponent } from './admin/solicitudes/solicitudes.component';
 
 const appRoutes: Routes = [
   { path: 'signIn',  component: SigninComponent },
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
   { path: 'profile', canActivate: [AuthGuard], component: ProfileComponent },
 
   { path: 'usersAgGrid',  component: UserAgGridComponent },
+  { path: 'solicitudesAgGrid',  component: SolicitudesComponent },
   // { path: 'usersBootstrap',  component: UserBootstrapComponent },
   // { path: 'usersMaterial',  component: UserMaterialComponent },
   { path: 'updateUser/:id',  component: UserUpdateComponent },

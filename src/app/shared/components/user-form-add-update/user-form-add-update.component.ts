@@ -107,6 +107,7 @@ export class UserFormAddUpdateComponent implements OnInit {
       this.user.userName = this.form.value.userName;
       this.user.password = this.form.value.password;
       this.user.updateAt = new Date().toISOString().slice(0, 19).replace('T', ' ');
+      // https://stackoverflow.com/questions/5129624/convert-js-date-time-to-mysql-datetime
       // this.user.updateAt =  moment( new Date(), 'YYYY-MM-DDTHH:mm').format('YYYY-MM-DD HH:mm:ss');
       this.user.idUserCreate = 1;
       this.user.idUserUpdate = 1;
