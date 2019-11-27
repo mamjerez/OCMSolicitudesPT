@@ -67,6 +67,10 @@ export class SigninComponent implements OnInit {
         this.localStorage.store('authenticationToken', response.token);
         this.logeadoService.estaLogeado();
         this.router.navigate(['/inicio']);
+        this.userService.getRoles(response.idUser).subscribe(resp => {
+          console.log(resp);
+          this.localStorage.store('roles', resp);
+        });
       }
     }, error => {
       console.log(error);

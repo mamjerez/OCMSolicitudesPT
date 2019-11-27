@@ -10,7 +10,7 @@ import { LogeadoService } from '../../services/logeado.service';
 })
 export class HeaderComponent implements OnInit {
   rol = 'admin';
-
+  roles = [];
   constructor(
     private localStorage: LocalStorageService,
     // private sessionStorage: SessionStorageService,
@@ -19,6 +19,8 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.roles = this.localStorage.retrieve('roles');
+    console.log(this.roles);
   }
 
   logout() {

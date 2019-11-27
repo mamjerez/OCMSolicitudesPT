@@ -11,6 +11,7 @@ import { ISingIn } from '../../shared/models/singin.model';
 })
 export class UsersService {
   public resourceUrl = 'http://localhost:4000/api/v1/users';
+  public resourceUrlRoles = 'http://localhost:4000/api/v1/userRols';
 
   /**
    *
@@ -104,6 +105,14 @@ export class UsersService {
       return this.http.get(`${this.resourceUrl}/userName/${userName}/${idUser}`);
     } catch (error) {
       console.log(error);
+    }
+  }
+
+  getRoles(userIdUser: string) {
+    try {
+      return this.http.get(`${this.resourceUrlRoles}/user/${userIdUser}`);
+    } catch (error) {
+    console.log(error);
     }
   }
 
