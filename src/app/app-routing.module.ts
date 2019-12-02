@@ -15,6 +15,7 @@ import { UserBootstrapComponent } from './admin/users/user-bootstrap/user-bootst
 import { UserMaterialComponent } from './admin/users/user-material/user-material.component';
 import { UserUpdateComponent } from './admin/users/user-update/user-update.component';
 import { SolicitudesComponent } from './admin/solicitudes/solicitudes.component';
+import { SolicitudUpdateComponent } from './admin/solicitudes/solicitud-update/solicitud-update.component';
 
 const appRoutes: Routes = [
   { path: 'signIn',  component: SigninComponent },
@@ -28,6 +29,8 @@ const appRoutes: Routes = [
   // { path: 'usersBootstrap',  component: UserBootstrapComponent },
   // { path: 'usersMaterial',  component: UserMaterialComponent },
   { path: 'updateUser/:id',  component: UserUpdateComponent },
+  { path: 'updateSolicitud/:id',  component: SolicitudUpdateComponent },
+
 
   { path: '**', pathMatch: 'full', component: Page404Component }
 ];

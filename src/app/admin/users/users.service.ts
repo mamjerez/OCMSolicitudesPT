@@ -108,7 +108,7 @@ export class UsersService {
     }
   }
 
-  getRoles(userIdUser: string) {
+  getRoles(userIdUser: number) {
     try {
       return this.http.get(`${this.resourceUrlRoles}/user/${userIdUser}`);
     } catch (error) {

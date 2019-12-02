@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SessionStorageService, LocalStorageService } from 'ngx-webstorage';
 import { LogeadoService } from '../../services/logeado.service';
+import { UsersService } from '../../../app/admin/users/users.service';
+
 
 @Component({
   selector: 'app-header',
@@ -9,18 +11,19 @@ import { LogeadoService } from '../../services/logeado.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  rol = 'admin';
-  roles = [];
+  rol: string;
+  roles: object;
+
   constructor(
     private localStorage: LocalStorageService,
     // private sessionStorage: SessionStorageService,
     public router: Router,
-    public logeadoService: LogeadoService
+    public logeadoService: LogeadoService,
+    public userService: UsersService,
   ) { }
 
   ngOnInit() {
-    this.roles = this.localStorage.retrieve('roles');
-    console.log(this.roles);
+    this.logeadoService.estaLogeado();
   }
 
   logout() {
@@ -28,5 +31,7 @@ export class HeaderComponent implements OnInit {
     // this.sessionStorage.clear('authenticationToken');
     this.router.navigate(['/signIn']);
     this.logeadoService.estaLogeado();
+    this.logeadoService.rol = null;
   }
+
 }

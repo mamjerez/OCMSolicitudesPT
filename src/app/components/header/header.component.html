@@ -32,12 +32,12 @@
         />
       </svg>
         <p>
-        Consultas realizadas al Portal de Transparencia del Ayuntamiento de Jerez.
+        Consultas realizadas al Portal de Transparencia del Ayuntamiento de Jerez. {{logeadoService.rol}}
           </p>
     </div>
     <div class="col-md-6 text-right">
                <ul>
-                <li style="display: inline; margin-right: 12px" *ngIf="logeadoService.isLogeado && rol === 'admin'">
+                <li style="display: inline; margin-right: 12px" *ngIf="logeadoService.rol === 'Administrador'">
                   <a
                     href="#"
                     id="navbarDropdown"
@@ -55,8 +55,6 @@
                     <!-- <a class="dropdown-item" href="#/usersMaterial">Usuarios con Material</a> -->
                     <!-- <div class="dropdown-divider"></div> -->
                     <!-- <a class="dropdown-item" href="#/links/add">Otros</a> -->
-
-
                   </div>
                 </li>
 
@@ -73,7 +71,8 @@
                   <a (click)="logout()">Cerrar sesión</a>
                 </li> -->
 
-                <li style="display: inline; margin-right: 12px" *ngIf="logeadoService.isLogeado && rol === 'admin'">
+                <!-- <li style="display: inline; margin-right: 12px" *ngIf="logeadoService.isLogeado && rol === 'admin'"> -->
+                <li style="display: inline; margin-right: 12px"  *ngIf="logeadoService.isLogeado">
                   <a
                     href="#"
                     id="navbarDropdown"
@@ -86,13 +85,9 @@
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                      <a class="dropdown-item" href="#/profile">Tu perfil</a>
-                     <a class="dropdown-item" href="#/usersAgGrid">Usuarios</a>
-                     <a class="dropdown-item" href="#/usersAgGrid">Y otra</a>
                      <a class="dropdown-item" (click)="logout()">Cerrar sesión</a>
                   </div>
                 </li>
-
-
               </ul>
           </div>
   </div>

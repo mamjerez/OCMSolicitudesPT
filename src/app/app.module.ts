@@ -30,6 +30,7 @@ import { UserMaterialComponent } from './admin/users/user-material/user-material
 import { User } from './shared/models/user.model';
 import { UserFormAddUpdateComponent } from './shared/components/user-form-add-update/user-form-add-update.component';
 import { SolicitudesComponent } from './admin/solicitudes/solicitudes.component';
+import { SolicitudUpdateComponent } from './admin/solicitudes/solicitud-update/solicitud-update.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { SolicitudesComponent } from './admin/solicitudes/solicitudes.component'
     UserMaterialComponent,
     UserFormAddUpdateComponent,
     SolicitudesComponent,
+    SolicitudUpdateComponent,
     // FontAwesomeModule,
   ],
   imports: [

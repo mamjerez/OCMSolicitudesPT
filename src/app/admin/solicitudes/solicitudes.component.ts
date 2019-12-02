@@ -48,7 +48,7 @@ export class SolicitudesComponent implements OnInit {
     });
   }
 
-  deleteSelectedUser() {
+  deleteSelected() {
     // console.log(this.users);
     if (this.Selected() !== null) {
       // const selectedFullNameUser = this.Selected()[0].TextoSolicitud ;
@@ -93,7 +93,7 @@ export class SolicitudesComponent implements OnInit {
   }
 
   updateSelected() {
-    this.router.navigate(['/update', this.Selected()[0].idUser]);
+    this.router.navigate(['/updateSolicitud', this.Selected()[0].idSolicitudes]);
     // Swal.fire({
     //   position: 'top-end',
     //   type: 'success',

@@ -1,6 +1,7 @@
-  this.user.updateAt =  moment( new Date(), 'YYYY-MM-DDTHH:mm').format('YYYY-MM-DD HH:mm:ss');
-
-# Debe comprobar los cambios al perder el foco no solo en change.
+ 
+# En lugar de almacernar los roles en el storage ¿Por qué no llamarlos directamente desde header y eviatamos almacenarlos?
+# ¿Guardar los roles encriptados?
+# En SignIn debe comprobar los cambios al perder el foco no solo en change.
 
 
 
@@ -52,3 +53,4 @@ https://jonathanmh.com/express-passport-json-web-token-jwt-authentication-beginn
 
 
 # Pasar fecha de updatedAt
+ this.user.updateAt =  moment( new Date(), 'YYYY-MM-DDTHH:mm').format('YYYY-MM-DD HH:mm:ss');
