@@ -31,6 +31,7 @@ import { User } from './shared/models/user.model';
 import { UserFormAddUpdateComponent } from './shared/components/user-form-add-update/user-form-add-update.component';
 import { SolicitudesComponent } from './admin/solicitudes/solicitudes.component';
 import { SolicitudUpdateComponent } from './admin/solicitudes/solicitud-update/solicitud-update.component';
+import { AytoSoliIniComponent } from './admin/solicitudes/ayto-soli-ini/ayto-soli-ini.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { SolicitudUpdateComponent } from './admin/solicitudes/solicitud-update/s
     UserFormAddUpdateComponent,
     SolicitudesComponent,
     SolicitudUpdateComponent,
+    AytoSoliIniComponent,
     // FontAwesomeModule,
   ],
   imports: [

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-solicitud-update',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SolicitudUpdateComponent implements OnInit {
 
-  constructor() { }
+  constructor( public router: Router) { }
 
   ngOnInit() {
   }
+
+   aytoSoliIni() {
+    // Hay que pasar el id de la solicitud
+    this.router.navigate(['/aytoSoliIni', 1]);
+      }
 
 }

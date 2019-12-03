@@ -1,66 +1,32 @@
-<!-- <div class="row" style = "margin: auto">
-    <div class="col-sm-12">
-      <div
-        class="card border-primary ml-4 text-center"
-        style="height: 18rem"
-      >
-       <div class="card-body text-primary">
-          <h5 class="card-title">Información de la solicitud</h5>
-          <div class="flex-container">
-              <div class="">
-               <h6  style="margin-left: 2px; width: 125px"> Fecha solicitud:</h6>
-               <h6 style="margin-left: 2px; width: 125px">12/11/2019</h6>
-               <h6  style="margin-left: 2px; width: 175px"> Días transcurridos:</h6>
-                  <h6 style="margin-left: 2px; width: 125px">12</h6>
-              </div>
-              <div>
-                  <h6  style="margin-left: 2px; width: 175px"> Estado actual:</h6>
-                  <h6 style="margin-left: 2px; width: 250px" > Espera autorizacion</h6>
-                  <h6  style="margin-left: 2px; width: 175px"> Días transcurridos:</h6>
-                  <h6 style="margin-left: 2px; width: 125px">12</h6>
-              </div>
-              <div>
-                3
-              </div>
-              <div class="row">
-                  <h6  style="margin-left: 2px; width: 125px"> Fecha solicitud:</h6>
-                  <h6 style="margin-left: 2px; width: 125px">12/11/2019</h6>
-                  <h6  style="margin-left: 2px; width: 175px"> Días transcurridos:</h6>
-                     <h6 style="margin-left: 2px; width: 125px">12</h6>
-                 </div>
-
-
-        </div>
-
-      </div>
-    </div> -->
-
+<form>
 <div class="container">
-  <h1>Información de la solicitud</h1>
+  <h1 class="text-center">Información de la solicitud.</h1>
   <div class="row justify-content-start">
-    <div class="col-2 recuadro">
-      <h6 style="margin-left: 2px; width: 125px">Fecha solicitud:</h6>
-      <h6 style="margin-left: 2px; width: 125px">12/11/2019</h6>
-      <h6 style="margin-left: 2px; width: 175px">Días transcurridos:</h6>
-      <h6 style="margin-left: 2px; width: 125px">12</h6>
+    <div class="col-2 recuadro1">
+      <h6>Fecha solicitud:</h6>
+      <input type="text" style="width: 86px" placeholder="12/11/2019">
+           <h6>Días transcurridos:</h6>
+           <input type="text" style="width: 20px" placeholder="12">
     </div>
-    <div class="col-2 recuadro">
+    <div class="col-4 recuadro1">
+      Organismo
+      <input type="text" style="width: 320px" placeholder="Ayuntamiento.">
+      <h6>Días transcurridos:</h6>
+      <input type="text" style="width: 20px" placeholder="12">
+    </div>
+    <div class="col-4 recuadro1">
+        Estado actual
+        <input type="text" style="width: 320px" placeholder="Esperando respuesta.">
+        <h6>Días transcurridos:</h6>
+        <input type="text" style="width: 20px" placeholder="12">
+      </div>
+    <!-- <div class="col-2 recuadro">
       One of two columns
-    </div>
-    <div class="col-2 recuadro">
-      One of two columns
-    </div>
-    <div class="col-2 recuadro">
-      One of two columns
-    </div>
-    <div class="col-2 recuadro">
-      One of two columns
-    </div>
-    <div class="col-2 recuadro">
-      One of two columns
-    </div>
+    </div> -->
   </div>
-  <div class="row justify-content-center">
+
+  <!-- Segunda fila -->
+  <div class="row justify-content-center" style="height: 25px">
     <div class="col-2 recuadro">
       Cabecera:
     </div>
@@ -69,7 +35,8 @@
     </div>
   </div>
 
-  <div class="row justify-content-end">
+  <!-- Tercera fila -->
+  <div class="row justify-content-end" style="height: 125px">
     <div class="col-2 recuadro">
       Texto
     </div>
@@ -78,15 +45,17 @@
     </div>
   </div>
 
-  <div class="row justify-content-around">
+  <!-- Cuarta fila -->
+  <!-- <div class="row justify-content-around">
     <div class="col-4 recuadro">
     1
     </div>
     <div class="col-4 recuadro">
       2
     </div>
-  </div>
+  </div> -->
 
+  <!-- Cabecera fases -->
   <div class="row justify-content-start">
       <div class="col-4 recuadroCabecera">
           <p class="cabecera">
@@ -106,12 +75,16 @@
     </div>
 
    <!-- Ayuntamiento -->
-    <div class="row justify-content-between">
+    <div class="row justify-content-between" style="height: 125px">
     <div class="col-1 recuadro">
-        <p>
-            Solicitud
-            inicial
-          </p>
+         <input type="text" style="width: 20px" placeholder="12">
+         <br>
+         <span style="color:blue;  font-size: 10px;">
+              Solicitud inicial
+        </span>
+        <br>
+          <button style="margin-left: 10px" (click)="aytoSoliIni()">Ver</button>
+
     </div>
     <div class="col-1 recuadro">
      <p>
@@ -175,5 +148,6 @@
       </div>
   </div>
 </div>
+</form>
 
 <!-- <a href="#" class="btn btn-primary">Solicitar</a> -->
