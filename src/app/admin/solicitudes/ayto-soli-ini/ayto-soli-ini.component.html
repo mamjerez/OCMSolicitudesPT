@@ -1,4 +1,12 @@
-<div >
-<img src="../../../../assets/images/Pantallazo solicitud.jpg" alt="Imagen" height="420" width="420">
-</div>
+    <ag-grid-angular
+    #agGrid
+    style="width: 900px; height: 650px; margin: auto"
+    class="ag-theme-balham"
+    [rowData]="documentos"
+    [columnDefs]="columnDefs"
+    (gridReady)="onGridReady($event)"
+    >
+    </ag-grid-angular>
+
 <a href="#updateSolicitud/3" class="btn btn-danger" style="margin-top: 97px">Volver</a>
+

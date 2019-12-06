@@ -10,12 +10,12 @@
   font-size: 30px;
 }
 .recuadro1 {
-  border: 1px solid blue;
-  height: 124px;
+  border: 1px solid black;
+  /* height: 124px; */
 }
 
 .recuadro {
-  border: 1px solid red;
+  border: 1px solid black;
   /* height: 75px; */
 }
 

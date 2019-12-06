@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 })
 export class SolicitudesService {
   public resourceUrl = 'http://localhost:4000/api/v1/solicitudes';
+  private idSolicitud: number;
 
   /**
    *
@@ -58,6 +59,16 @@ export class SolicitudesService {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  public setIdSolicitud(idSolicitud: number) {
+    this.idSolicitud = idSolicitud;
+    // console.log(this.idSolicitud);
+     }
+
+  public getIdSolicitud() {
+    // console.log(this.idSolicitud);
+    return this.idSolicitud;
   }
 
 }

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from 'ngx-webstorage';
+
 import { UsersService } from '../admin/users/users.service';
+import { SolicitudesService } from '../admin/solicitudes/solicitudes.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,9 +10,14 @@ import { UsersService } from '../admin/users/users.service';
 export class LogeadoService {
   isLogeado = false;
   private idUser: number;
+
   public rol: string;
 
-  constructor(private localStorage: LocalStorageService, public userService: UsersService) { }
+  constructor(
+    private localStorage: LocalStorageService,
+    public userService: UsersService,
+    public solicitudesService: SolicitudesService
+    ) { }
 
   public estaLogeado() {
     if (this.localStorage.retrieve('authenticationToken')) {
@@ -38,4 +45,19 @@ export class LogeadoService {
     const rol = data.filter(r => r.descripcion === paramRol);
     this.rol = rol ? rol[0].descripcion : null;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

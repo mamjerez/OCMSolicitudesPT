@@ -1,3 +1,4 @@
+# myJson = { ...myJson, ...this.formGroup.value }
 
 # https://github.com/AlexKhymenko/ngx-permissions/wiki
 

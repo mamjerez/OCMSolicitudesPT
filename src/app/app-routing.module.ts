@@ -32,11 +32,7 @@ const appRoutes: Routes = [
   { path: 'updateUser/:id',  component: UserUpdateComponent },
   { path: 'updateSolicitud/:id',  component: SolicitudUpdateComponent },
 
-  { path: 'aytoSoliIni/:id',  component: AytoSoliIniComponent },
-
-
-
-
+  { path: 'aytoSoliIni',  component: AytoSoliIniComponent },
   { path: '**', pathMatch: 'full', component: Page404Component }
 ];
 
