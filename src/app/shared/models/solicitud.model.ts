@@ -12,6 +12,12 @@ export interface ISolicitud {
   FechaAprobacionOCM?: Date;
   FechaPresentacion?: Date;
   FechaInicioExpediente?: Date;
+  fecIniAyu?: Date;
+  fecFinAyu?: Date;
+  fecIniCon?: Date;
+  fecFinCon?: Date;
+  fecIniDef?: Date;
+  fecFinDef?: Date;
   TextoCabecera?: string | null;
   TextoSolicitud?: string | null;
   SolicitudPrevia?: number | null;
@@ -48,6 +54,12 @@ export class Solicitud implements ISolicitud {
      public FechaAprobacionOCM?: Date,
      public FechaPresentacion?: Date,
      public FechaInicioExpediente?: Date,
+     public fecIniAyu?: Date,
+     public fecFinAyu?: Date,
+     public fecIniCon?: Date,
+     public fecFinCon?: Date,
+     public fecIniDef?: Date,
+     public fecFinDef?: Date,
      public TextoCabecera?: string | null,
      public TextoSolicitud?: string | null,
      public SolicitudPrevia?: number | null,
@@ -81,6 +93,12 @@ export class Solicitud implements ISolicitud {
       this.FechaAprobacionOCM = FechaAprobacionOCM ? FechaAprobacionOCM : null;
       this.FechaPresentacion = FechaPresentacion ? FechaPresentacion : null;
       this.FechaInicioExpediente = FechaInicioExpediente ? FechaInicioExpediente : null;
+      this.fecIniAyu = fecIniAyu ? fecIniAyu : null;
+      this.fecFinAyu = fecFinAyu ? fecFinAyu : null;
+      this.fecIniCon = fecIniCon ? fecIniCon : null;
+      this.fecFinCon = fecFinCon ? fecFinCon : null;
+      this.fecIniDef = fecIniDef ? fecIniDef : null;
+      this.fecFinDef = fecFinDef ? fecFinDef : null;
       this.TextoCabecera = TextoCabecera ? TextoCabecera : null;
       this.TextoSolicitud = TextoSolicitud ? TextoSolicitud : null;
       this.SolicitudPrevia = SolicitudPrevia ? SolicitudPrevia : null;

@@ -8,19 +8,19 @@
       <div class="col-2 recuadro1">
         <h6>
           Fecha solicitud:
-          <span class="badge badge-pill badge-primary">{{diasTranscurridos}}</span>
+          <span class="badge badge-pill badge-danger">{{diasAyu}}</span>
         </h6>
-        <h6>{{ fechaPresentacion }}</h6>
+        <h6>{{ FecSolicitud }}</h6>
       </div>
       <div class="col-4 recuadro1">
         <h6>
-          Organismo <span class="badge badge-pill badge-warning">12</span>
+          Organismo:
         </h6>
         <h6>Ayuntamiento</h6>
              </div>
       <div class="col-4 recuadro1">
         <h6>
-          Estado actual <span class="badge badge-pill badge-danger">12</span>
+          Estado actual:
         </h6>
         <h6>Esperando respuesta.</h6>
       </div>
@@ -69,25 +69,26 @@
       <div class="col-4" style="height: 50px;border: 5px solid green">
         <p class="cabecera">
           Ayuntamiento.
-          <span class="badge badge-pill badge-success">24</span>
+          <span class="badge badge-pill badge-danger">{{diasAyu}}</span>
         </p>
       </div>
       <div class="col-4" style="border: 5px solid yellow">
         <p class="cabecera">
           Consejo Transparencia Andalucía.
+          <span class="badge badge-pill badge-danger">{{diasCon}}</span>
         </p>
       </div>
       <div class="col-4" style="border: 5px solid red">
         <p class="cabecera">
           Defensor del Pueblo Andalucía.
+          <span class="badge badge-pill badge-success">{{diasDef}}</span>
         </p>
       </div>
     </div>
 
     <!-- Ayuntamiento -->
     <div class="row justify-content-between" style="height: 125px">
-      <div class="col-1 recuadro">
-        <span class="badge badge-pill badge-danger">3</span>
+      <div class="col-1 recuadro" style = "background-color: chartreuse">
         <br />
         <span style="color:blue;  font-size: 10px;">
           Solicitud inicial
@@ -95,7 +96,7 @@
         <br />
         <button style="margin-left: 10px" (click)="aytoSoliIni()">Ver</button>
       </div>
-      <div class="col-1 recuadro">
+      <div class="col-1 recuadro"  style = "background-color: chartreuse">
         <p>
           Inicio expediente
         </p>
@@ -112,17 +113,17 @@
       </div>
 
       <!-- Consejo -->
-      <div class="col-1 recuadro">
-        <p>
+      <div class="col-1 recuadro" style = "background-color: chartreuse">
+            <p>
           Reclamación
         </p>
       </div>
-      <div class="col-1 recuadro">
+      <div class="col-1 recuadro" style = "background-color: chartreuse">
         <p>
           Inicio expediente
         </p>
       </div>
-      <div class="col-1 recuadro">
+      <div class="col-1 recuadro" style = "background-color: chartreuse">
         <p>
           Subsanaciones
         </p>
@@ -134,12 +135,13 @@
       </div>
 
       <!-- Defensor -->
-      <div class="col-1 recuadro">
+      <div class="col-1 recuadro" style = "background-color: chartreuse">
+
         <p>
           Reclamación
         </p>
       </div>
-      <div class="col-1 recuadro">
+      <div class="col-1 recuadro" style = "background-color: chartreuse">
         <p>
           Inicio expediente
         </p>
